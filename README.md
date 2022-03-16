@@ -6,13 +6,13 @@
 - >On tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta
 - _Osaa soveltaa versionhallintaa osana ohjelmistokehitystä_
 - **Osaa soveltaa UML-mallinnustekniikkaa ohjelmiston suunnittelussa ja dokumentoinnissa**
-- Tuntee ohjelmiston *testauksen* eri vaiheet :joy:
+- Tuntee ohjelmiston *testauksen* eri vaiheet
 - Osaa soveltaa **automatisoitua testausta** yksinkertaisissa ohjelmistoprojekteissa. 
 - *Tuntee tärkeimpiä ohjelmiston suunnitteluperiaatteita ja osaa soveltaa niitä yksinkertaisissa projekteissa.*
 
 source: [link](https://ohjelmistotekniikka-hy.github.io/python/viikko1)
 
-### Some important files
+### Some important files :joy:
 
 - [gitlog](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
 - [komentorivi](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)

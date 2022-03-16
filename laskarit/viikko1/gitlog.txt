@@ -1,0 +1,122 @@
+commit 3053465eceb9654c7bcf12a9257c01ab11a4880a
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 14:14:46 2022 +0200
+
+    random changes for practice
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bbadc4a8cb52033f601641ea2b28ff3d81e1da23
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 14:07:40 2022 +0200
+
+    thing to remember
+
+ tiedostoja/file3 | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 8a7c353769f920d9655174bb5bde9b762013b92d
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 14:03:11 2022 +0200
+
+    new files added
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9fef6dd58a0f2c83bad3907ecb0bd5e3983354a0
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:56:36 2022 +0200
+
+    modifications to content
+
+ eka.txt    | 4 +++-
+ kolmas.txt | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 020fbb0325040aad2027672d2e7f57584121eac2
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:52:37 2022 +0200
+
+    renamed
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 817b23952d7ac3b420c4a21c7d4ea5d86512d757
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:15:35 2022 +0200
+
+    removed toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 5063521e986192800b65aedc2adbe83e3aa3769f
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:13:42 2022 +0200
+
+    modified txt
+
+ tiedosto.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit ce919d1765e9964d348d738dbc620a887d6b90ba
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:07:50 2022 +0200
+
+    The Tragedy of Darth Plagueis The Wise
+
+ tiedosto.txt | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit e4b842f498aff88a5de1119dd9732b8b666f4b05
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 13:00:38 2022 +0200
+
+    added stuff to fill up the void in my mind
+
+ stuff/stuff_you_should_know.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c3c591c7d8ada909ff017b9e79e6fc094acb0906
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 12:58:46 2022 +0200
+
+    Lisätty tekstiä toiseen ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit a332a27b94ce60ec27dab5db56fbc82e48846333
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 12:55:56 2022 +0200
+
+    lisätään kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit eaa917537fbad7e59e955df037b955042246fa0f
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 12:52:27 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 8ffae7b48b3198c29b5ba042ba30f33272c85c25
+Author: Matias Tolppanen <matias.tolppanen@outlook.com>
+Date:   Wed Mar 16 12:50:38 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

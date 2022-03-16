@@ -12,8 +12,8 @@
 
 ### Some important files
 
-[gitlog](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
-[komentorivi](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+- [gitlog](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+- [komentorivi](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
 ## ~~Esimerkki suoritus~~
 

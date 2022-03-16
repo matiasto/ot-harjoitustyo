@@ -10,6 +10,11 @@
 - Osaa soveltaa **automatisoitua testausta** yksinkertaisissa ohjelmistoprojekteissa. 
 - *Tuntee tärkeimpiä ohjelmiston suunnitteluperiaatteita ja osaa soveltaa niitä yksinkertaisissa projekteissa.*
 
+### Some important files
+
+[gitlog](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/gitlog.txt)
+[komentorivi](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
+
 ## ~~Esimerkki suoritus~~
 
 ```python

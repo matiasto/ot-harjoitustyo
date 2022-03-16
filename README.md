@@ -3,12 +3,12 @@
 ### *Kurssin suoritettuaan opiskelija:*
 
 - Tuntee ohjelmistotuotantoprosessin vaiheet
-- >On tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta
-- _Osaa soveltaa versionhallintaa osana ohjelmistokehitystä_
-- **Osaa soveltaa UML-mallinnustekniikkaa ohjelmiston suunnittelussa ja dokumentoinnissa**
-- Tuntee ohjelmiston *testauksen* eri vaiheet
-- Osaa soveltaa **automatisoitua testausta** yksinkertaisissa ohjelmistoprojekteissa. 
-- *Tuntee tärkeimpiä ohjelmiston suunnitteluperiaatteita ja osaa soveltaa niitä yksinkertaisissa projekteissa.*
+- On tietoinen vesiputousmallin ja ketterän ohjelmistotuotannon luonteesta
+- Osaa soveltaa versionhallintaa osana ohjelmistokehitystä
+- Osaa soveltaa UML-mallinnustekniikkaa ohjelmiston suunnittelussa ja dokumentoinnissa
+- Tuntee ohjelmiston testauksen eri vaiheet
+- Osaa soveltaa automatisoitua testausta yksinkertaisissa ohjelmistoprojekteissa. 
+- Tuntee tärkeimpiä ohjelmiston suunnitteluperiaatteita ja osaa soveltaa niitä yksinkertaisissa projekteissa.
 
 source: [link](https://ohjelmistotekniikka-hy.github.io/python/viikko1)
 
@@ -18,6 +18,8 @@ source: [link](https://ohjelmistotekniikka-hy.github.io/python/viikko1)
 - [komentorivi](https://github.com/matiasto/ot-harjoitustyo/blob/main/laskarit/viikko1/komentorivi.txt)
 
 ## ~~Esimerkki suoritus~~
+
+>Using recursion
 
 ```python
 def fizzbuzz(num):

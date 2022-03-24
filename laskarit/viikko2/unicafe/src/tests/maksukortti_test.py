@@ -24,8 +24,7 @@ class TestMaksukortti(unittest.TestCase):
         self.maksukortti.ota_rahaa(20)
         self.assertEqual(str(self.maksukortti), "saldo: 0.1")
 
-    def test_ota_rahaa_palauttaa_oikean_totuus_arvon_true(self):
+    def test_ota_rahaa_palauttaa_oikean_totuus_arvon(self):
         self.assertEqual(str(self.maksukortti.ota_rahaa(5)), "True")
-
-    def test_ota_rahaa_palauttaa_oikean_totuus_arvon_false(self):
         self.assertEqual(str(self.maksukortti.ota_rahaa(15)), "False")
+        

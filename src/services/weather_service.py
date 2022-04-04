@@ -53,5 +53,5 @@ class Weather:
         latitude, longitude = self.__location(city)
         weather_data = self.__current_weather_data(latitude, longitude)
         weather_data = WeatherNow(city, weather_data)
-        return weather_data.temperature
+        return weather_data
 

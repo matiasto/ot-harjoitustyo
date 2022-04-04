@@ -35,4 +35,4 @@ class WeatherNow:
         self.__temperature = main['temp']
         self.__humidity = main['humidity']
         self.__pressure = main['pressure']
-        self.__report = data['weather'][0]
+        self.__report = data['weather'][0]["main"]

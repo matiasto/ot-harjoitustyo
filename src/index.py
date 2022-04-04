@@ -1,9 +1,15 @@
-from services import Weather
+from tkinter import Tk
+from ui import UI
 
 
 def main():
-    w = Weather()
-    print(w.current_weather('Espoo'))
+    window = Tk()
+    window.title('WeatherApp')
+
+    ui_view = UI(window)
+    ui_view.start()
+
+    window.mainloop()
 
 
 if __name__ == '__main__':

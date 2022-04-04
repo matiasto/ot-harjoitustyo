@@ -6,11 +6,11 @@ authors = ["Matias Tolppanen <matias.tolppanen@helsinki.fi>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+invoke = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"
 coverage = "^6.3.2"
-invoke = "^1.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

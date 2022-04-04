@@ -17,9 +17,6 @@
         <li>
             <a href="#documentation">Documentation</a>
         </li>
-        <li>
-            <a href="#week-1-laskarit">Week 1 Laskarit</a>
-        </li>
     </ol>
 </details>
 

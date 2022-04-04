@@ -31,11 +31,21 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
     ```bash
     git clone https://github.com/matiasto/ot-harjoitustyo.git
     ```
-3. Install dependecies
+3. In the root folder, export the accuired API key. Note that the variable name needs to be exactly the same!
+    ```bash
+    export OPENWEATHER_API_KEY=<your API key without quotes>
+    ```
+4. Check
+    ```bash
+    echo $OPENWEATHER_API_KEY
+    ```
+    If succesful, it should log your API key to the console.
+
+5. Install dependecies
     ```bash
     poetry install
     ````
-4. Run
+6. Run
     ```bash
     poetry run invoke start
     ````

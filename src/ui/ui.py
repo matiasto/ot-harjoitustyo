@@ -1,4 +1,5 @@
 from ui.weather_view import WeatherView
+from ui.login_view import LoginView
 
 
 class UI:
@@ -18,14 +19,22 @@ class UI:
         self._root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
     def start(self):
-        self._show_weather_view()
-
-    def _show_weather_view(self):
-        self._hide_current_view()
-        self._current_view = WeatherView(self._root)
-        self._current_view.pack()
+        self._show_login_view()
 
     def _hide_current_view(self):
         if self._current_view:
             self._current_view.destroy()
         self._current_view = None
+
+    def _handle_weather(self):
+        self._show_weather_view()
+
+    def _show_login_view(self):
+        self._hide_current_view()
+        self._current_view = LoginView(self._root, self._handle_weather)
+        self._current_view.pack()
+
+    def _show_weather_view(self):
+        self._hide_current_view()
+        self._current_view = WeatherView(self._root)
+        self._current_view.pack()

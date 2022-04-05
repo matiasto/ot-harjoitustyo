@@ -2,4 +2,4 @@ __pycache__
 .pytest_cache
 .coverage
 htmlcov
-config.ini
+# config.ini # comment for development

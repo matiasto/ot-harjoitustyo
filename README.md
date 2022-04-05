@@ -59,4 +59,5 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 
 - [Requirements Specification](./documentation/requirements_specification.md)
 - [Record of Working Hours](./documentation/record_of_working_hours.md)
+- [Changelog](./documentation/changelog.md)
 

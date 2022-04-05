@@ -8,11 +8,12 @@ class WeatherService:
 
     def __request(self, url: str) -> dict:
         data_request = requests.get(url)
-        if data_request.status_code == 200:
+        data = data_request.json()
+        if data_request.status_code == 200 and data != []:
             # getting data in the json format
-            return data_request.json()
+            return data
         else:
-            print(f"Error in request:\nExited with code {data_request.status_code}")
+            raise Exception
 
     # Using Geocoding API, converts city name to longitude and latitude 
     def __location(self, city: str) -> tuple:

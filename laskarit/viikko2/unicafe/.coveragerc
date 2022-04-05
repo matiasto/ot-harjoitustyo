@@ -1,6 +1,0 @@
-[run]
-omit = 
-    src/tests/**
-    src/index.py
-    laskarit/*
-    documentation/*

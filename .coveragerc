@@ -1,6 +1,3 @@
 [run]
 source = src
-omit = src/**/__init__.py, src/tests/*, laskarit/viikko2/unicafe/src_coverage_debug/tests/*
-
-[report]
-omit = src/**/__init__.py, src/tests/*, laskarit/viikko2/unicafe/src_coverage_debug/tests/*
+omit = src/**/__init__.py,src/tests/**,src/ui/**,src/index.py

@@ -24,33 +24,27 @@
 
 WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered desktop application that allows users to inspect the current weather, forecast, and historical weather data.
 
-### Getting started
+### Getting Started
 
 1. Get a free API Key at [OpenWeather](https://home.openweathermap.org/users/sign_in)
 2. Clone the repo
     ```bash
     git clone https://github.com/matiasto/ot-harjoitustyo.git
     ```
-3. In the root folder, export the accuired API key. Note that the variable name needs to be exactly the same!
-    ```bash
-    export OPENWEATHER_API_KEY=<your API key without quotes>
-    ```
-4. Check
-    ```bash
-    echo $OPENWEATHER_API_KEY
-    ```
-    If succesful, it should log your API key to the console.
-
-5. Install dependecies
+3. Install dependecies
     ```bash
     poetry install
     ````
-6. Run
+4. Run
     ```bash
     poetry run invoke start
     ````
+5. During the first execution, the app will ask for your API key you accuired from step 1.
 ---
 ### Testing
+
+
+> Some of the tests require the API key to work. Go through the [Getting Started](#getting-started) before running tests
 
 - Run tests
     ```bash

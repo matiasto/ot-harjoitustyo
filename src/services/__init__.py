@@ -1,1 +1,2 @@
-from .weather_service import Weather
+from .weather_service import WeatherService
+from .config_service import ConfigService

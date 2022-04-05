@@ -1,10 +1,11 @@
 from tkinter import ttk, constants, StringVar
-from services import Weather
+from services import WeatherService
 
 
 class WeatherView:
     def __init__(self, root):
         self._root = root
+        self._weather = WeatherService()
         self._frame = None
         self._city = None
         self._options = {'padx': 5, 'pady': 5}
@@ -17,8 +18,7 @@ class WeatherView:
         self._frame.destroy()
     
     def get_weather(self):
-        weather = Weather()
-        data = weather.current_weather(self._city.get())
+        data = self._weather.current_weather(self._city.get())
 
         self.result_label_city.config(text=data.city_name)
         temp_result = f"Lämpötila: {data.temperature} C"

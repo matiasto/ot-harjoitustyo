@@ -41,8 +41,3 @@ class ConfigService:
         self.__open_weather_url = self.__parser["DEFAULT"]["open_weather_url"]
         self.__geocoding_url = self.__parser["DEFAULT"]["geocoding_url"]
         self.__api_key = self.__parser["USER"]["api_key"]
-
-
-if __name__=="__main__":
-    test = ConfigService()
-    print(test.open_weather_url)

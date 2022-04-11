@@ -1,1 +1,1 @@
-from .weather_now import WeatherNow
+from .weather import Weather

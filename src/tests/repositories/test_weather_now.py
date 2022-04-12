@@ -64,6 +64,3 @@ class TestWeatherNow(unittest.TestCase):
 
     def test_report_correct(self):
         self.assertEqual(self.weather_now.report, "Clear")
-
-
-    

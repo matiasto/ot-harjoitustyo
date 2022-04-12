@@ -29,12 +29,13 @@ class TestWeatherService(unittest.TestCase):
         self.assertEqual(data, ("60.2047672", "24.6568435"))
 
     def test_weather_data(self):
-        data = self.weather_service._WeatherService__current_weather_data(
+        data = self.weather_service._WeatherService__weather_data(
             "60.2047672", "24.6568435")
         self.assertEqual(isinstance(data, dict), True)
-        self.assertEqual(isinstance(data["main"]["temp"], float), True)
+        self.assertEqual(isinstance(data["current"]["temp"], float), True)
 
-    def test_current_weather(self):
-        data = self.weather_service.current_weather("Espoo")
-        self.assertEqual(isinstance(data.temperature, float), True)
-        self.assertEqual(isinstance(data.report, str), True)
+    def test_weather(self):
+        data = self.weather_service.weather("Espoo")
+        self.assertEqual(isinstance(data.current.temperature, float), True)
+        self.assertEqual(isinstance(data.current.report, str), True)
+        self.assertEqual(len(data.forecast), 8)

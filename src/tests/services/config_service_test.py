@@ -11,7 +11,7 @@ class TestConfigService(unittest.TestCase):
 
     def test_openweather_url(self):
         self.assertEqual(self.config_service.open_weather_url,
-                         "https://api.openweathermap.org/data/2.5/weather?")
+                         "https://api.openweathermap.org/data/2.5/onecall?")
 
     def test_geocoding_url(self):
         self.assertEqual(self.config_service.geocoding_url,

@@ -6,7 +6,8 @@ class ConfigService:
 
     def __init__(self) -> None:
         self.__parser = ConfigParser()
-        self.__CONFIG_FILE_PATH = os.path.join(os.path.dirname(__file__), "..", "config.ini")
+        self.__CONFIG_FILE_PATH = os.path.join(
+            os.path.dirname(__file__), "..", "config.ini")
         self.__open_weather_url = None
         self.__geocoding_url = None
         self.__api_key = None

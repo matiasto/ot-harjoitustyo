@@ -1,11 +1,12 @@
 from datetime import datetime
 
+
 class Current:
     def __init__(self, data: dict):
-        self.__time = datetime.fromtimestamp(data["dt"]).strftime("%H")
+        self.__time = datetime.fromtimestamp(data["dt"]).strftime("%H:%M")
         self.__temperature = data["temp"]
-        self.__report = data["weather"]["description"]
-        self.__icon = data["weather"]["icon"]
+        self.__report = data["weather"][0]["description"]
+        self.__icon = data["weather"][0]["icon"]
 
     @property
     def time(self):

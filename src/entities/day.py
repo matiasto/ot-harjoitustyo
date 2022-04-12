@@ -1,11 +1,12 @@
 from datetime import datetime
 
+
 class Day:
     def __init__(self, data: dict):
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__temperature = data["temp"]["day"]
-        self.__report = data["weather"]["description"]
-        self.__icon = data["weather"]["icon"]
+        self.__report = data["weather"][0]["description"]
+        self.__icon = data["weather"][0]["icon"]
 
     @property
     def time(self):

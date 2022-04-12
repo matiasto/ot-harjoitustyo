@@ -11,17 +11,13 @@ The early version incorporates only one user group and requires no login. Later 
 ### The Functionality Offered in the Early Version
 
 - Using city name as a search term, the user can view:
-    - Current weather.
-    - Weather forecast.
-    - Historical weather data.
+    - [x] Current weather.
+    - [x] Weather forecast.
+    - [ ] Historical weather data.
 
 ### Development Ideas for Future Versions
 
-- User can:
-    - Create account.
-    - Login.
-- If user is logged in:
-    - He can save favorite location.
+- User can save favorite location.
     - Favorite location is show on the dashboard.
 - Plots for forecasts and historical data.
 - More options for:

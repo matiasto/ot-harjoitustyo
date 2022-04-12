@@ -39,7 +39,7 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
     ```bash
     poetry run invoke start
     ````
-5. During the first execution, the app will ask for your API key you accuired from step 1.
+5. During the first execution, the app will ask for API key accuired from step 1.
 ---
 ### Testing
 
@@ -54,10 +54,19 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
     ```bash
     poetry run invoke coverage-report
     ````
+- Perform pylint quality inspection
+    ```bash
+    poetry run invoke lint
+    ````
+- Execute autopep8 format
+    ```bash
+    poetry run invoke format
+    ````
 
 ### Documentation
 
-- [Requirements Specification](./documentation/requirements_specification.md)
-- [Record of Working Hours](./documentation/record_of_working_hours.md)
+- [Architecture](./documentation/architecture.md)
 - [Changelog](./documentation/changelog.md)
+- [Record of Working Hours](./documentation/record_of_working_hours.md)
+- [Requirements Specification](./documentation/requirements_specification.md)
 

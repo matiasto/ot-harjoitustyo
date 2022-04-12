@@ -8,7 +8,7 @@ class Weather:
     def __init__(self, city_name: str, data: dict):
         self.__city_name = city_name
         self.__current = Current(data["current"])
-        self.__forecast = list()
+        self.__forecast = []
         self.__parse_data(data)
 
     @property

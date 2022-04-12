@@ -13,21 +13,20 @@ class WeatherService:
         if data_request.status_code == 200 and data != []:
             # getting data in the json format
             return data
-        else:
-            raise Exception
+        raise Exception
 
     # Using Geocoding API, converts city name to longitude and latitude
     def __location(self, city: str) -> tuple:
-        URL = self.__config.geocoding_url + "q=" + \
+        url = self.__config.geocoding_url + "q=" + \
             city + "&appid=" + self.__config.api_key
-        data = self.__request(URL)[0]
+        data = self.__request(url)[0]
         return (str(data["lat"]), str(data["lon"]))
 
     def __weather_data(self, latitude: str, longitude: str) -> dict:
-        URL = self.__config.open_weather_url + "lat=" + latitude + "&lon=" + longitude + \
+        url = self.__config.open_weather_url + "lat=" + latitude + "&lon=" + longitude + \
             "&exclude=minutely,hourly,alerts" + "&appid=" + \
             self.__config.api_key + "&units=metric"
-        return self.__request(URL)
+        return self.__request(url)
 
     def weather(self, city: str) -> dict:
         latitude, longitude = self.__location(city)

@@ -7,7 +7,10 @@ class LoginView:
         self._handle_weather = handle_weather
         self._config = config
         self._frame = None
+        self._api_key = None
         self._options = {'padx': 5, 'pady': 5}
+
+        self._initialize()
 
     def pack(self):
         self._frame.pack(fill=constants.X)
@@ -17,7 +20,7 @@ class LoginView:
 
     def _handle_button_click(self):
         key = self._api_key.get()
-        self.__config.api_key = key
+        self._config.api_key = key
         self._handle_weather()
 
     def _initialize(self):
@@ -29,7 +32,7 @@ No API key found!
 Get a free API Key from https://openweathermap.org and
 insert the key here'''
 
-        label = ttk.Label(master=self._frame, text=message)
+        label = ttk.Label(self._frame, text=message)
         key_entry = ttk.Entry(self._frame, textvariable=self._api_key)
 
         button = ttk.Button(

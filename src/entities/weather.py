@@ -1,5 +1,5 @@
 from .current import Current
-from .day import Day
+from .forecast import Forecast
 
 
 class Weather:
@@ -25,4 +25,4 @@ class Weather:
 
     def __parse_data(self, data: dict):
         for day in data["daily"]:
-            self.__forecast.append(Day(day))
+            self.__forecast.append(Forecast(day))

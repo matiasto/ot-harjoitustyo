@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class Day:
+class Forecast:
     def __init__(self, data: dict):
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__temperature = data["temp"]["day"]

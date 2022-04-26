@@ -1,5 +1,5 @@
-from ui.weather_view import WeatherView
-from ui.login_view import LoginView
+from views import WeatherView
+from views import LoginView
 from services import ConfigService
 
 

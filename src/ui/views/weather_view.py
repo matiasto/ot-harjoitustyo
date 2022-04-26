@@ -1,8 +1,8 @@
 from tkinter import constants
 from services import WeatherService
-from frames import NavbarFrame
-from frames import WeatherFrame
-from frames import GraphFrame
+from ..frames import NavbarFrame
+from ..frames import WeatherFrame
+from ..frames import GraphFrame
 
 
 class WeatherView:

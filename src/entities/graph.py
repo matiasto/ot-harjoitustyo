@@ -12,7 +12,7 @@ class Graph:
         return self.__data
 
     def __sort_data(self):
-        self.__data = self.__data.set_index('time')
+        self.__data = self.__data.set_index("time")
         self.__data = self.__data.sort_index()
 
     def __parse(self, data: list) -> None:

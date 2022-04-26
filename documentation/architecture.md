@@ -93,10 +93,7 @@
     sequenceDiagram
 
     actor User
-    participant NavbarFrame
-    participant WeatherFrame
-    participant GraphFrame
-    participant WeatherView
+    participant UI
     participant WeatherService
     participant ConfigService
     participant Geocoding API
@@ -106,9 +103,8 @@
     participant Forecast
     participant Graph
 
-    User ->> NavbarFrame: search "Helsinki"
-    NavbarFrame ->> WeatherView: handle_get_weather("Helsinki")
-    WeatherView ->> WeatherService: weather("Helsinki")
+    User ->> UI: search "Helsinki"
+    UI ->> WeatherService: weather("Helsinki")
     ConfigService ->> WeatherService: urls and api key
     WeatherService ->> Geocoding API: "Helsinki"
     Geocoding API ->> WeatherService: longitude, latitude
@@ -131,13 +127,7 @@
 
     Weather ->> Graph: 120 hours of historical data and 48 hour forecast
     Graph ->> Weather: Dataframe object
-    Weather ->> WeatherView: the whole weather object
-    WeatherView ->> WeatherView: update_frames()
-    WeatherView ->> NavbarFrame: show_navbar_frame()
-    WeatherView ->> WeatherFrame: show_weather_frame()
-    WeatherView ->> GraphFrame: show_weather_frame()
-    NavbarFrame ->> User: updated header
-    WeatherFrame ->> User: updated current and forecast
-    GraphFrame ->> User: updated graph
+    Weather ->> UI: the whole weather object
+    UI ->> UI: update_frames()
 
 ```

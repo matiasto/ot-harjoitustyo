@@ -27,15 +27,15 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 ### Getting Started
 
 1. Get a free API Key at [OpenWeather](https://home.openweathermap.org/users/sign_in)
-2. Clone the repo
-    ```bash
-    git clone https://github.com/matiasto/ot-harjoitustyo.git
-    ```
-3. Install dependecies
+2. Download the
+    [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko5)
+3. Navigate to the project folder and run 
     ```bash
     poetry install
     ````
-4. Run
+> Please note that your Download folder may not have the permission to execute.
+
+4. Start the application by executing
     ```bash
     poetry run invoke start
     ````

@@ -1,4 +1,5 @@
 import unittest
+from pandas import DataFrame
 from services import WeatherService
 from services import ConfigService
 
@@ -34,8 +35,20 @@ class TestWeatherService(unittest.TestCase):
         self.assertEqual(isinstance(data, dict), True)
         self.assertEqual(isinstance(data["current"]["temp"], float), True)
 
+    def test_historical_data(self):
+        data = self.weather_service._WeatherService__historical_weather_data(
+            "60.2047672", "24.6568435")
+        self.assertEqual(isinstance(data, list), True)
+        self.assertEqual(isinstance(data[0]["temp"], float), True)
+        self.assertEqual(len(data) == 120, True)
+
     def test_weather(self):
         data = self.weather_service.weather("Espoo")
         self.assertEqual(isinstance(data.current.temperature, float), True)
         self.assertEqual(isinstance(data.current.report, str), True)
         self.assertEqual(len(data.forecast), 8)
+
+    def test_graph(self):
+        data = self.weather_service.weather("Espoo")
+        self.assertEqual(isinstance(data.graph.data, DataFrame), True)
+        self.assertEqual(len(data.graph.data) > 120, True)

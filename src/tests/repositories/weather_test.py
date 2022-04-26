@@ -1,10 +1,12 @@
 import unittest
+
+from pandas import DataFrame
 from entities import Weather
 
 
 class TestWeather(unittest.TestCase):
     def setUp(self):
-        self.mock_data = {
+        self.mock_data_weather = {
             "lat": 33.44,
             "lon": -94.04,
             "timezone": "America/Chicago",
@@ -35,7 +37,37 @@ class TestWeather(unittest.TestCase):
                     "1h": 0.21
                 }
             },
-
+            "minutely": [
+                {
+                    "dt": 1618317060,
+                    "precipitation": 0.205
+                }
+            ],
+            "hourly": [
+                {
+                    "dt": 1618315200,
+                    "temp": 282.58,
+                    "feels_like": 280.4,
+                    "pressure": 1019,
+                    "humidity": 68,
+                    "dew_point": 276.98,
+                    "uvi": 1.4,
+                    "clouds": 19,
+                    "visibility": 306,
+                    "wind_speed": 4.12,
+                    "wind_deg": 296,
+                    "wind_gust": 7.33,
+                    "weather": [
+                        {
+                            "id": 801,
+                            "main": "Clouds",
+                            "description": "few clouds",
+                            "icon": "02d"
+                        }
+                    ],
+                    "pop": 0
+                }
+            ],
             "daily": [
                 {
                     "dt": 1618308000,
@@ -79,7 +111,30 @@ class TestWeather(unittest.TestCase):
             ]
         }
 
-        self.weather = Weather("testi", self.mock_data)
+        self.mock_data_historical = [
+            {
+                "dt": 1586390400,
+                "temp": 278.41,
+                "feels_like": 269.43,
+                "pressure": 1006,
+                "humidity": 65,
+                "dew_point": 272.46,
+                "clouds": 0,
+                "wind_speed": 9.83,
+                "wind_deg": 60,
+                "wind_gust": 15.65,
+                "weather": [
+                    {
+                        "id": 800,
+                        "main": "Clear",
+                        "description": "clear sky",
+                        "icon": "01n"
+                    }
+                ]
+            }
+        ]
+        self.weather = Weather(
+            "testi", self.mock_data_weather, self.mock_data_historical)
 
     def test_obj_exists(self):
         self.assertNotEqual(self.weather, None)
@@ -92,5 +147,10 @@ class TestWeather(unittest.TestCase):
         self.assertEqual(len(self.weather.forecast), 1)
         self.assertEqual(isinstance(self.weather.forecast[0], object), True)
 
+    def test_has_graph_data(self):
+        self.assertEqual(isinstance(self.weather.graph, object), True)
+        self.assertEqual(isinstance(self.weather.graph.data, DataFrame), True)
+        self.assertEqual(len(self.weather.graph.data), 2)
+
     def test_city_name_correct(self):
-        self.assertEqual(self.weather.city_name, "testi")
+        self.assertEqual(self.weather.city, "testi")

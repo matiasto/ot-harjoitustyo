@@ -21,8 +21,8 @@ class NavbarFrame:
 
     def _header(self):
         header = ttk.Label(
-            self._frame, text=f"Weather in {self._city}", font=("Arial", 25))
-        header.grid(row=0, column=3, columnspan=5, sticky=(constants.W))
+            self._frame, text=f"Weather in {self._city}", font=("Arial", 30))
+        header.grid(row=0, column=7, columnspan=5, sticky=(constants.S), padx=50)
 
     def _navbar(self):
         self._city = StringVar(value=self._city)

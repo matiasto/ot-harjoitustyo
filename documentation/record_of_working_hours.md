@@ -14,4 +14,9 @@
 | 12.04.2022    | 1    | Writing tests |
 | 12.04.2022    | 1    | Class diagram |
 | 12.04.2022    | 1    | Updating docs |
-| yht           | 24   | | 
+| 25.04.2022    | 2    | Historical data request |
+| 25.04.2022    | 3    | Introduction to Matplotlib in Tkinter |
+| 26.04.2022    | 3    | Refactoring of UI |
+| 26.04.2022    | 2    | Writing tests |
+| 26.04.2022    | 2    | Updating documents |
+| yht           | 36   | | 

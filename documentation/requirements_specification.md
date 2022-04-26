@@ -13,7 +13,7 @@ The early version incorporates only one user group and requires no login. Later 
 - Using city name as a search term, the user can view:
     - [x] Current weather.
     - [x] Weather forecast.
-    - [ ] Historical weather data.
+    - [x] Historical weather data.
 
 ### Development Ideas for Future Versions
 

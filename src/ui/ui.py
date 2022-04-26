@@ -8,14 +8,10 @@ class UI:
         self._root = root
         self._current_view = None
         self._config = ConfigService()
-        # set window size
-        # get the screen dimension
         screen_width = self._root.winfo_screenwidth()
         screen_height = self._root.winfo_screenheight()
-        # find the center point
         center_x = int(screen_width/2)
         center_y = int(screen_height/2)
-        # set the position of the window to the center of the screen
         self._root.geometry("+%d+%d" % (center_x, center_y))
 
     def start(self):
@@ -44,4 +40,3 @@ class UI:
     def _show_weather_view(self):
         self._hide_current_view()
         self._current_view = WeatherView(self._root)
-        self._current_view.pack()

@@ -57,7 +57,7 @@ class ForecastFrame:
 
     def __initialize(self):
         self.__frame = ttk.Frame(master=self.__root)
-        self.__details_frame = DetailsWidget(self.__frame)
+        self.__details_frame = DetailsFrame(self.__frame)
         self.__set_header()
         self.__forecast()
         self.__handle_details(0)

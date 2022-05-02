@@ -8,8 +8,9 @@ class ConfigService:
     Attributes:
         arser: Instanse of ConfigParser that reads and writes config.ini file.
         config_file_path: File path for configuration file.
-        open_weather_url: The base url for Onecall API used to retrieve weather data.
-        geocoding_url: The base url for Geocoding API used to convert city name to latitude and longitude.
+        open_weather_url: base url for Onecall API used to retrieve weather data.
+        geocoding_url: base url for Geocoding API used to convert city name to
+                       latitude and longitude.
         api_key: The key required to access the OpenWeather- and Geocoding API.
     """
 

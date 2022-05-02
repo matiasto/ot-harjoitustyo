@@ -21,7 +21,7 @@ class WeatherService:
 
     def __init__(self) -> None:
         """Class constructor.
-        
+
         Creates an instance of config service.
         """
 
@@ -78,7 +78,8 @@ class WeatherService:
             Keys "hourly" and "daily" include a list of dictionaries
             describing their respective weather conditions.
         """
-        url = f"{self.__config.open_weather_url}?lat={latitude}&lon={longitude}&exclude=minutely,alerts&appid={self.__config.api_key}&units=metric"
+        url = (f"{self.__config.open_weather_url}?lat={latitude}&lon={longitude}"
+               f"&exclude=minutely,alerts&appid={self.__config.api_key}&units=metric")
         return self.__request(url)
 
     def __historical_weather_data(self, latitude: str, longitude: str) -> list:
@@ -98,13 +99,14 @@ class WeatherService:
         today = datetime.now()
         for i in range(1, 6):
             day = str(int(datetime.timestamp(today - timedelta(days=i))))
-            url = f"{self.__config.open_weather_url}/timemachine?lat={latitude}&lon={longitude}&dt={day}&appid={self.__config.api_key}&units=metric"
+            url = (f"{self.__config.open_weather_url}/timemachine?lat={latitude}&lon={longitude}"
+                   f"&dt={day}&appid={self.__config.api_key}&units=metric")
             historical_data = historical_data + self.__request(url)["hourly"]
         return historical_data
 
     def weather(self, city: str) -> object:
         """The class endpoint.
-        
+
         Given the city input, the method calls for location() on the input.
         The returned latitude and longitude are then fed to
         weather_data() and historical_data().

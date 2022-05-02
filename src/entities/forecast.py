@@ -2,6 +2,9 @@ from datetime import datetime
 
 
 class Forecast:
+    """Responsible for forecast data."""
+
+
     def __init__(self, data: dict) -> None:
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__tempature_max = data["temp"]["max"]
@@ -31,6 +34,11 @@ class Forecast:
         self.__deg_to_str(data["wind_deg"])
 
     def __deg_to_str(self, deg) -> None:
+        """Converts degrees to cardinal form.
+        
+        e.g: "North East", "South", ... 
+        """
+
         value = int(deg / 45)
         lst = ["North", "North East", "East", "South East",
                "South", "South West", "West", "North West"]
@@ -38,48 +46,107 @@ class Forecast:
 
     @property
     def time(self) -> object:
+        """Current time, UTC.
+        
+        Datetime object.
+        """
+
         return self.__time
 
     @property
     def temperature_max(self) -> float:
+        """Forecast for maximum temperature during the day."""
+
         return self.__tempature_max
 
     @property
     def temperature_min(self) -> float:
+        """Forecast for minimum temperature during the day."""
+
         return self.__tempature_min
 
     @property
     def temperature(self) -> dict:
+        """Temperature for general parts of the day.
+
+        Celsius.
+
+        Returns:
+            dict:
+                "morning": _,
+                "day": _,
+                "evening":_,
+                "night": _
+        }
+        """
+
         return self.__temperature
 
     @property
     def wind_speed(self) -> float:
+        """Metre/sec."""
+
         return self.__wind_speed
 
     @property
     def wind_deg(self) -> str:
+        """In Cardinal form eg. North East.
+
+        Initially in degrees(meteorological)."""
+
         return self.__wind_deg
 
     @property
     def feels_like(self) -> dict:
+        """Feels like for general parts of the day.
+
+        Celsius.
+
+        Returns:
+            dict:
+                "morning": _,
+                "day": _,
+                "evening":_,
+                "night": _
+        }
+        """
+
         return self.__feels_like
 
     @property
     def sunrise(self) -> object:
+        """Sunrise time, UTC.
+        
+        Datetime object.
+        """
+
         return self.__sunrise
 
     @property
     def sunset(self) -> object:
+        """Sunset time, UTC.
+        
+        Datetime object.
+        """
+
         return self.__sunset
 
     @property
     def uvi(self) -> int:
+        """UV index."""
+
         return self.__uvi
 
     @property
     def report(self) -> str:
+        """Short description of the weather."""
+
         return self.__report
 
     @property
     def icon(self) -> str:
+        """Weather icon id.
+        
+        Used to retrieve icons from the API."""
+        
         return self.__icon

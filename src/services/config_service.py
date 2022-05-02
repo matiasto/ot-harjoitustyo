@@ -11,6 +11,7 @@ class ConfigService:
         open_weather_url: base url for Onecall API used to retrieve weather data.
         geocoding_url: base url for Geocoding API used to convert city name to
                        latitude and longitude.
+        icon_url: base url for weather icons.
         api_key: The key required to access the OpenWeather- and Geocoding API.
     """
 
@@ -32,23 +33,24 @@ class ConfigService:
 
     @property
     def open_weather_url(self):
-        """the Open Weather - One Call API base url."""
+        """The Open Weather - One Call API base url."""
 
         return self.__open_weather_url
 
     @property
     def geocoding_url(self):
-        """the Open Weather - Geocoding API base url."""
+        """The Open Weather - Geocoding API base url."""
 
         return self.__geocoding_url
 
     @property
     def icon_url(self):
+        """The Open Weather - weather icon base url"""
         return self.__icon_url
 
     @property
     def api_key(self):
-        """the Open Weather - API Key."""
+        """The Open Weather - API Key."""
         return self.__api_key
 
     @api_key.setter

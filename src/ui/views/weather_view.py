@@ -7,12 +7,11 @@ from ..frames import GraphFrame
 
 class WeatherView:
     def __init__(self, root):
-        self._root = root
-        self._weather = WeatherService()
-        self._frames = {}
-        self._data = None
-        self._options = {'padx': 5, 'pady': 5}
-        self._initialize()
+        self.__root = root
+        self.__weather = WeatherService()
+        self.__frames = {}
+        self.__data = None
+        self.__initialize()
 
     def pack(self):
         self._frame.pack(fill=constants.X)
@@ -20,48 +19,48 @@ class WeatherView:
     def destroy(self):
         self._frame.destroy()
 
-    def _handle_get_weather(self, city):
-        self._get_weather(city)
+    def __handle_get_weather(self, city):
+        self.__get_weather(city)
 
-    def _show_navbar_frame(self):
-        if "navbar" in self._frames:
-            frame = self._frames["navbar"]
+    def __show_navbar_frame(self):
+        if "navbar" in self.__frames:
+            frame = self.__frames["navbar"]
             frame.destroy()
-        self._frames["navbar"] = NavbarFrame(
-            self._root, self._data.city, self._handle_get_weather)
-        self._frames["navbar"].pack()
+        self.__frames["navbar"] = NavbarFrame(
+            self.__root, self.__data.city, self.__handle_get_weather)
+        self.__frames["navbar"].pack()
 
-    def _show_weather_frame(self):
-        if "weather" in self._frames:
-            frame = self._frames["weather"]
+    def __show_weather_frame(self):
+        if "weather" in self.__frames:
+            frame = self.__frames["weather"]
             frame.destroy()
-        self._frames["weather"] = WeatherFrame(self._root, self._data)
-        self._frames["weather"].pack()
+        self.__frames["weather"] = WeatherFrame(self.__root, self.__data)
+        self.__frames["weather"].pack()
 
-    def _show_graph_frame(self):
-        if "graph" in self._frames:
-            frame = self._frames["graph"]
+    def __show_graph_frame(self):
+        if "graph" in self.__frames:
+            frame = self.__frames["graph"]
             frame.destroy()
-        self._frames["graph"] = GraphFrame(self._root, self._data.graph)
-        self._frames["graph"].pack()
+        self.__frames["graph"] = GraphFrame(self.__root, self.__data.graph)
+        self.__frames["graph"].pack()
 
-    def _get_weather(self, city):
-        self._data = self._weather.weather(city)
-        self._update_frames()
+    def __get_weather(self, city):
+        self.__data = self.__weather.weather(city)
+        self.__update_frames()
 
-    def _update_frames(self):
-        self._show_navbar_frame()
-        self._show_weather_frame()
-        self._show_graph_frame()
+    def __update_frames(self):
+        self.__show_navbar_frame()
+        self.__show_weather_frame()
+        self.__show_graph_frame()
 
-    def _initialize(self):
+    def __initialize(self):
         city = "Helsinki"
-        data = self._weather.weather(city)
-        self._frames["navbar"] = NavbarFrame(
-            self._root, city, self._handle_get_weather)
-        self._frames["weather"] = WeatherFrame(self._root, data)
-        self._frames["graph"] = GraphFrame(self._root, data.graph)
+        data = self.__weather.weather(city)
+        self.__frames["navbar"] = NavbarFrame(
+            self.__root, city, self.__handle_get_weather)
+        self.__frames["weather"] = WeatherFrame(self.__root, data)
+        self.__frames["graph"] = GraphFrame(self.__root, data.graph)
 
-        self._frames["navbar"].pack()
-        self._frames["weather"].pack()
-        self._frames["graph"].pack()
+        self.__frames["navbar"].pack()
+        self.__frames["weather"].pack()
+        self.__frames["graph"].pack()

@@ -25,6 +25,7 @@ class ConfigService:
             os.path.dirname(__file__), "..", "config.ini")
         self.__open_weather_url = None
         self.__geocoding_url = None
+        self.__icon_url = None
         self.__api_key = None
 
         self.__initialize()
@@ -40,6 +41,10 @@ class ConfigService:
         """the Open Weather - Geocoding API base url."""
 
         return self.__geocoding_url
+
+    @property
+    def icon_url(self):
+        return self.__icon_url
 
     @property
     def api_key(self):
@@ -78,4 +83,5 @@ class ConfigService:
         self.__parser.read(self.__config_file_path)
         self.__open_weather_url = self.__parser["DEFAULT"]["open_weather_url"]
         self.__geocoding_url = self.__parser["DEFAULT"]["geocoding_url"]
+        self.__icon_url = self.__parser["DEFAULT"]["icon_url"]
         self.__api_key = self.__parser["USER"]["api_key"]

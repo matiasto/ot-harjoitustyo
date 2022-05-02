@@ -18,6 +18,10 @@ class GraphFrame:
     def destroy(self):
         self.__frame.destroy()
 
+    def __set_header(self):
+        header = ttk.Label(self.__frame, text="Weather Graph", font=("Ariel", 25))
+        header.grid(row=12, column=0)
+
     def __plot_data(self):
         fig = Figure(figsize=(15, 5), dpi=100)
         ax1 = fig.add_subplot()
@@ -43,8 +47,9 @@ class GraphFrame:
 
         canvas = FigureCanvasTkAgg(fig, master=self.__frame)
         canvas.draw()
-        canvas.get_tk_widget().grid(row=5, column=0, columnspan=15)
+        canvas.get_tk_widget().grid(row=13, column=0, columnspan=15, pady=10)
 
     def __initialize(self):
         self.__frame = ttk.Frame(master=self.__root)
+        self.__set_header()
         self.__plot_data()

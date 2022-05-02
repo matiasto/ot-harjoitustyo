@@ -1,3 +1,4 @@
 from .navbar_frame import NavbarFrame
-from .weather_frame import WeatherFrame
+from .current_frame import CurrentFrame
+from .forecast_frame import ForecastFrame
 from .graph_frame import GraphFrame

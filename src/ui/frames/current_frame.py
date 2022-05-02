@@ -26,14 +26,18 @@ class CurrentFrame:
         icon = ttk.Label(label_frame, image=self.__icon)
         temp = ttk.Label(
             label_frame, text=f"{self.__data.temperature} C", font=("Arial", 16))
-        wind = ttk.Label(label_frame, text=f"Wind: {self.__data.wind_speed} m/s {self.__data.wind_deg}")
-        feels_like = ttk.Label(label_frame, text=f"Feels like: {self.__data.feels_like} C")
-        day_length = ttk.Label(label_frame, text=f"Sunrise: {self.__data.sunrise}, Sunset: {self.__data.sunset}")
+        wind = ttk.Label(
+            label_frame, text=f"Wind: {self.__data.wind_speed} m/s {self.__data.wind_deg}")
+        feels_like = ttk.Label(
+            label_frame, text=f"Feels like: {self.__data.feels_like} C")
+        day_length = ttk.Label(
+            label_frame, text=f"Sunrise: {self.__data.sunrise}, Sunset: {self.__data.sunset}")
         uvi = ttk.Label(label_frame, text=f"UVI index: {self.__data.uvi}")
-        report = ttk.Label(label_frame, text=f"{self.__data.report}", font=("Arial", 16))
+        report = ttk.Label(
+            label_frame, text=f"{self.__data.report}", font=("Arial", 16))
 
         time.grid(row=0, column=0, columnspan=3)
-        icon.grid(row=1, column=0, rowspan=3,columnspan=3)
+        icon.grid(row=1, column=0, rowspan=3, columnspan=3)
 
         temp.grid(row=0, column=4, rowspan=2, columnspan=2, padx=30)
         report.grid(row=2, column=4, rowspan=2, columnspan=2, padx=30)
@@ -43,7 +47,8 @@ class CurrentFrame:
         day_length.grid(row=2, column=10, columnspan=4, sticky=constants.E)
         uvi.grid(row=3, column=10, columnspan=4, sticky=constants.E)
 
-        label_frame.grid(row=1, column=0, rowspan=4, columnspan=15, **self.__options)
+        label_frame.grid(row=1, column=0, rowspan=4,
+                         columnspan=15, **self.__options)
 
     def __initialize(self):
         self.__frame = ttk.Frame(master=self.__root)

@@ -6,14 +6,24 @@ class Forecast:
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__tempature_max = data["temp"]["max"]
         self.__tempature_min = data["temp"]["min"]
-        self.__temperature = {"morn": data["temp"]["morn"], "day": data["temp"]
-                              ["day"], "evening": data["temp"]["eve"], "night": data["temp"]["night"]}
-        self.__feels_like = {"morn": data["feels_like"]["morn"], "day": data["feels_like"]
-                             ["day"], "evening": data["feels_like"]["eve"], "night": data["feels_like"]["night"]}
+        self.__temperature = {
+            "morning": data["temp"]["morn"],
+            "day": data["temp"]["day"],
+            "evening": data["temp"]["eve"],
+            "night": data["temp"]["night"]
+        }
+        self.__feels_like = {
+            "morning": data["feels_like"]["morn"],
+            "day": data["feels_like"]["day"],
+            "evening": data["feels_like"]["eve"],
+            "night": data["feels_like"]["night"]
+        }
         self.__wind_speed = data["wind_speed"]
         self.__wind_deg = None
-        self.__sunrise = datetime.fromtimestamp(data["sunrise"]).strftime("%H:%M")
-        self.__sunset = datetime.fromtimestamp(data["sunset"]).strftime("%H:%M")
+        self.__sunrise = datetime.fromtimestamp(
+            data["sunrise"]).strftime("%H:%M")
+        self.__sunset = datetime.fromtimestamp(
+            data["sunset"]).strftime("%H:%M")
         self.__uvi = data["uvi"]
         self.__report = data["weather"][0]["description"]
         self.__icon = data["weather"][0]["icon"]
@@ -22,7 +32,8 @@ class Forecast:
 
     def __deg_to_str(self, deg) -> None:
         value = int(deg / 45)
-        lst = ["North", "North East", "East", "South East", "South", "South West", "West", "North West"]
+        lst = ["North", "North East", "East", "South East",
+               "South", "South West", "West", "North West"]
         self.__wind_deg = lst[(value % 8)]
 
     @property

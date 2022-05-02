@@ -35,14 +35,16 @@ class WeatherView:
         if "current" in self.__frames:
             frame = self.__frames["current"]
             frame.destroy()
-        self.__frames["current"] = CurrentFrame(self.__root, self.__data.current)
+        self.__frames["current"] = CurrentFrame(
+            self.__root, self.__data.current)
         self.__frames["current"].pack()
 
     def __show_forecast_frame(self):
         if "forecast" in self.__frames:
             frame = self.__frames["forecast"]
             frame.destroy()
-        self.__frames["forecast"] = ForecastFrame(self.__root, self.__data.forecast)
+        self.__frames["forecast"] = ForecastFrame(
+            self.__root, self.__data.forecast)
         self.__frames["forecast"].pack()
 
     def __show_graph_frame(self):

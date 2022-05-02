@@ -1,7 +1,8 @@
-import requests
 from io import BytesIO
+import requests
 from PIL import Image, ImageTk
 from .config_service import ConfigService
+
 
 class IconService:
     def __init__(self) -> None:

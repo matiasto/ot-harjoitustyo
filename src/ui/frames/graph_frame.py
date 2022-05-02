@@ -19,7 +19,8 @@ class GraphFrame:
         self.__frame.destroy()
 
     def __set_header(self):
-        header = ttk.Label(self.__frame, text="Weather Graph", font=("Ariel", 25))
+        header = ttk.Label(
+            self.__frame, text="Weather Graph", font=("Ariel", 25))
         header.grid(row=12, column=0)
 
     def __plot_data(self):

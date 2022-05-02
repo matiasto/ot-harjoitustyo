@@ -24,17 +24,20 @@ class ForecastFrame:
         self.__details_frame.update(self.__data[index], self.__icons[index])
 
     def __set_header(self):
-        forecast_header = ttk.Label(self.__frame, text="Forecast", font=("Arial", 25))
+        forecast_header = ttk.Label(
+            self.__frame, text="Forecast", font=("Arial", 25))
         forecast_header.grid(row=1, column=0)
 
     def __forecast(self):
         for i, day in enumerate(self.__data):
             self.__icons.append(self.__icon_service.geticon(day.icon))
-            label_frame = ttk.Labelframe(self.__frame, text="Click for details")
+            label_frame = ttk.Labelframe(
+                self.__frame, text="Click for details")
 
             time = ttk.Label(label_frame, text=day.time)
             icon = ttk.Label(label_frame, image=self.__icons[i])
-            temp = ttk.Label(label_frame, text=f"{day.temperature_max} | {day.temperature_min} C")
+            temp = ttk.Label(
+                label_frame, text=f"{day.temperature_max} | {day.temperature_min} C")
             report = ttk.Label(label_frame, text=day.report)
 
             def handler(event, self=self, i=i):

@@ -1,7 +1,7 @@
 from tkinter import ttk, constants
 
 
-class DetailsWidget:
+class DetailsFrame:
     def __init__(self, frame):
         self.__frame = frame
         self.__current = None

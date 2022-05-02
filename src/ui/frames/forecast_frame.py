@@ -1,5 +1,5 @@
 from tkinter import font, ttk, constants
-from .details_widget import DetailsWidget
+from .details_frame import DetailsFrame
 from services import IconService
 
 

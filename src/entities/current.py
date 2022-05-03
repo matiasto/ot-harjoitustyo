@@ -32,10 +32,11 @@ class Current:
         self.__wind_deg = lst[(value % 8)]
 
     @property
-    def time(self) -> object:
+    def time(self) -> str:
         """Current time, UTC
         
-        Datetime object
+        Format "%H:%M"
+        i.e. 15:30.
         """
 
         return self.__time
@@ -69,25 +70,27 @@ class Current:
         return self.__feels_like
 
     @property
-    def sunrise(self) -> object:
+    def sunrise(self) -> str:
         """Sunrise time, UTC.
         
-        Datetime object.
+        Format "%H:%M"
+        i.e. "05:30".
         """
 
         return self.__sunrise
 
     @property
-    def sunset(self) -> object:
+    def sunset(self) -> str:
         """Sunset time, UTC.
 
-        Datetime object.
+        Format "%H:%M"
+        i.e. "21:30".
         """
 
         return self.__sunset
 
     @property
-    def uvi(self) -> int:
+    def uvi(self) -> float:
         """Current UV index."""
 
         return self.__uvi

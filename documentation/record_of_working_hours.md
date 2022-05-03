@@ -19,4 +19,8 @@
 | 26.04.2022    | 3    | Refactoring of UI |
 | 26.04.2022    | 2    | Writing tests |
 | 26.04.2022    | 2    | Updating documents |
-| yht           | 36   | | 
+| 02.05.2022    | 4    | Detailed weather view |
+| 03.05.2022    | 4    | Docstring |
+| 03.05.2022    | 1    | Writing tests |
+| 03.05.2022    | 3    | Architecture description |
+| yht           | 48   | | 

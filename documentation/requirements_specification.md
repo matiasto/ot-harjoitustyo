@@ -14,12 +14,13 @@ The early version incorporates only one user group and requires no login. Later 
     - [x] Current weather.
     - [x] Weather forecast.
     - [x] Historical weather data.
+    - [x] Detailed weather view.
 
 ### Development Ideas for Future Versions
 
 - User can save favorite location.
     - Favorite location is show on the dashboard.
-- Plots for forecasts and historical data.
+- [x] Plots for forecasts and historical data.
 - More options for:
     - Forecast interval.
     - Historical data interval.

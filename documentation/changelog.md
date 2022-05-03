@@ -23,3 +23,12 @@
 - New entity for graph element.
 - Enhanced UI with new graph element that displays temperature and rain of past five, and two upcoming days.
 - UI refactored to views and frames to reduce clutter and further benefiting manageability.
+
+---
+
+## Week 6
+- Details for current and forecast data.
+- Interface to show and switch between detailed views.
+- New service for icons.
+- Refactoring of Frames.
+- Docstring added.

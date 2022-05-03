@@ -65,7 +65,7 @@ class WeatherService:
             city + "&appid=" + self.__config.api_key
         url = f"{self.__config.geocoding_url}q={city}&appid={self.__config.api_key}"
         data = self.__request(url)[0]
-        return (str(data["lat"]), str(data["lon"]))
+        return (data["name"], str(data["lat"]), str(data["lon"]))
 
     def __weather_data(self, latitude: str, longitude: str) -> dict:
         """Using Onecall API retrieves the current and 7 day forecast weather.
@@ -124,7 +124,7 @@ class WeatherService:
             object: Weather object.
         """
 
-        latitude, longitude = self.__location(city)
+        city_name, latitude, longitude = self.__location(city)
         weather_data = self.__weather_data(latitude, longitude)
         historical_data = self.__historical_weather_data(latitude, longitude)
-        return Weather(city, weather_data, historical_data)
+        return Weather(city_name, weather_data, historical_data)

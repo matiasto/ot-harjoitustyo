@@ -83,20 +83,6 @@ class Forecast:
         return self.__temperature
 
     @property
-    def wind_speed(self) -> float:
-        """Metre/sec."""
-
-        return self.__wind_speed
-
-    @property
-    def wind_deg(self) -> str:
-        """In Cardinal form eg. North East.
-
-        Initially in degrees(meteorological)."""
-
-        return self.__wind_deg
-
-    @property
     def feels_like(self) -> dict:
         """Feels like for general parts of the day.
 
@@ -112,6 +98,20 @@ class Forecast:
         """
 
         return self.__feels_like
+
+    @property
+    def wind_speed(self) -> float:
+        """Metre/sec."""
+
+        return self.__wind_speed
+
+    @property
+    def wind_deg(self) -> str:
+        """In Cardinal form eg. North East.
+
+        Initially in degrees(meteorological)."""
+
+        return self.__wind_deg
 
     @property
     def sunrise(self) -> str:

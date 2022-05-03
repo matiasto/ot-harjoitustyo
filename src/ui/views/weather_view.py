@@ -8,7 +8,7 @@ from ..frames import GraphFrame
 
 class WeatherView:
     """The applications main view.
-    
+
     Combines multiple frames into one view.
     Handles new requests to WeatherService.
     Updates frames with new data.
@@ -62,7 +62,7 @@ class WeatherView:
 
     def __show_navbar_frame(self) -> None:
         """Activates NavbarFrame.
-        
+
         Passes the city name as an argument.
         (used in header element).
         """
@@ -134,7 +134,7 @@ class WeatherView:
 
     def __initialize(self) -> None:
         """Initializes the view.
-        
+
         Default parameter: Helsinki.
         """
 

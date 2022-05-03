@@ -51,7 +51,7 @@ class GraphFrame:
 
     def __plot_data(self) -> None:
         """Plots the data.
-        
+
         x-axis: Time (Datetime).
         temperature: Red line(first y-axis).
         rain: Blue bar (second y-axis).

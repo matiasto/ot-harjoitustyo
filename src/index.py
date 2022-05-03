@@ -3,6 +3,12 @@ from ui import UI
 
 
 def main():
+    """Start app.
+
+    Intializes the Tk instance, starts the UI, and
+    handles the mainloop.
+    """
+
     window = Tk()
     window.title('WeatherApp')
 

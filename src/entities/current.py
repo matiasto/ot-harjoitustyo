@@ -48,12 +48,12 @@ class Current:
         return self.__temperature
 
     @property
-    def wind_deg(self) -> str:
-        """In Cardinal form eg. North East.
+    def feels_like(self) -> float:
+        """Accounts for the human perception of weather.
 
-        Initially in degrees(meteorological)."""
-
-        return self.__wind_deg
+        Celsius degrees.
+        """
+        return self.__feels_like
 
     @property
     def wind_speed(self) -> float:
@@ -62,12 +62,12 @@ class Current:
         return self.__wind_speed
 
     @property
-    def feels_like(self) -> float:
-        """Accounts for the human perception of weather.
+    def wind_deg(self) -> str:
+        """In Cardinal form eg. North East.
 
-        Celsius degrees.
-        """
-        return self.__feels_like
+        Initially in degrees(meteorological)."""
+
+        return self.__wind_deg
 
     @property
     def sunrise(self) -> str:

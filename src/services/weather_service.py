@@ -123,7 +123,7 @@ class WeatherService:
         Returns:
             object: Weather object.
         """
-        
+
         latitude, longitude = self.__location(city)
         weather_data = self.__weather_data(latitude, longitude)
         historical_data = self.__historical_weather_data(latitude, longitude)

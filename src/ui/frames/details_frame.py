@@ -12,7 +12,7 @@ class DetailsFrame:
     this class uses the Frame instance of ForecastFrame object.
 
     Managed by the ForecastFrame.
-    
+
     Attributes:
         frame: The Frame instance from ForecastFrame.
         current: current details frame.
@@ -41,7 +41,7 @@ class DetailsFrame:
 
     def __set_general(self) -> None:
         """Generates the general widgets.
-        
+
         These widgets display general information about the day.
         """
 
@@ -71,7 +71,7 @@ class DetailsFrame:
 
     def __set_table(self) -> None:
         """Generates the table.
-        
+
         The table displays the temperature and 
         feels like values trough out the day.
         """
@@ -94,7 +94,7 @@ class DetailsFrame:
 
     def update(self, day: object, icon: object) -> None:
         """The method visible for ForecastFrame.
-        
+
         This method updates the shown details.
 
         Args:

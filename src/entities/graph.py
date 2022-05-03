@@ -28,7 +28,7 @@ class Graph:
     @property
     def data(self) -> object:
         """Graphs DataFrame."""
-        
+
         return self.__data
 
     def __sort_data(self):

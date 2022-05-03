@@ -85,7 +85,7 @@ class ConfigService:
 
         Reads config.ini file and sets corresponding atribute values.
         """
-        
+
         self.__parser.read(self.__config_file_path)
         self.__open_weather_url = self.__parser["DEFAULT"]["open_weather_url"]
         self.__geocoding_url = self.__parser["DEFAULT"]["geocoding_url"]

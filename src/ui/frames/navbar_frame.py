@@ -80,7 +80,7 @@ class NavbarFrame:
 
     def __initialize(self) -> None:
         """Initializes the frame."""
-        
+
         self.__frame = ttk.Frame(master=self.__root)
         self.__header()
         self.__navbar()

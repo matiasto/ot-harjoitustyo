@@ -32,29 +32,31 @@ class ConfigService:
         self.__initialize()
 
     @property
-    def open_weather_url(self):
+    def open_weather_url(self) -> str:
         """The Open Weather - One Call API base url."""
 
         return self.__open_weather_url
 
     @property
-    def geocoding_url(self):
+    def geocoding_url(self) -> str:
         """The Open Weather - Geocoding API base url."""
 
         return self.__geocoding_url
 
     @property
-    def icon_url(self):
+    def icon_url(self) -> str:
         """The Open Weather - weather icon base url"""
+
         return self.__icon_url
 
     @property
-    def api_key(self):
+    def api_key(self) -> str:
         """The Open Weather - API Key."""
+
         return self.__api_key
 
     @api_key.setter
-    def api_key(self, new_key: str):
+    def api_key(self, new_key: str) -> None:
         """Sets API key.
 
         Saves the key to config.ini.
@@ -78,11 +80,12 @@ class ConfigService:
             return True
         return False
 
-    def __initialize(self):
+    def __initialize(self) -> None:
         """Initialize atributes.
 
         Reads config.ini file and sets corresponding atribute values.
         """
+        
         self.__parser.read(self.__config_file_path)
         self.__open_weather_url = self.__parser["DEFAULT"]["open_weather_url"]
         self.__geocoding_url = self.__parser["DEFAULT"]["geocoding_url"]

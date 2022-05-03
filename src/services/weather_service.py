@@ -42,6 +42,7 @@ class WeatherService:
         Returns:
             dict: The data from succesful request.
         """
+
         data_request = requests.get(url)
         data = data_request.json()
         if data_request.status_code == 200 and data != []:
@@ -59,6 +60,7 @@ class WeatherService:
         Returns:
             tuple: Longitude and latitude are float values in string format.
         """
+
         url = self.__config.geocoding_url + "q=" + \
             city + "&appid=" + self.__config.api_key
         url = f"{self.__config.geocoding_url}q={city}&appid={self.__config.api_key}"
@@ -78,6 +80,7 @@ class WeatherService:
             Keys "hourly" and "daily" include a list of dictionaries
             describing their respective weather conditions.
         """
+
         url = (f"{self.__config.open_weather_url}?lat={latitude}&lon={longitude}"
                f"&exclude=minutely,alerts&appid={self.__config.api_key}&units=metric")
         return self.__request(url)
@@ -95,6 +98,7 @@ class WeatherService:
             list: List of hourly historical data.
             Each hours weather is represented as dictionary.
         """
+
         historical_data = []
         today = datetime.now()
         for i in range(1, 6):
@@ -119,6 +123,7 @@ class WeatherService:
         Returns:
             object: Weather object.
         """
+        
         latitude, longitude = self.__location(city)
         weather_data = self.__weather_data(latitude, longitude)
         historical_data = self.__historical_weather_data(latitude, longitude)

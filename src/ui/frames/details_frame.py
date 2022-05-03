@@ -2,18 +2,49 @@ from tkinter import ttk, constants
 
 
 class DetailsFrame:
-    def __init__(self, frame):
+    """Displays forecast details.
+
+    This Frame presents the detailed information devolved from the ForecastFrame.
+
+    Unlike the other frames, this class works as an
+    extension to ForecastFrame. In practise, this means
+    that instead of using the main TK() instance as the root window,
+    this class uses the Frame instance of ForecastFrame object.
+
+    Managed by the ForecastFrame.
+    
+    Attributes:
+        frame: The Frame instance from ForecastFrame.
+        current: current details frame.
+        data: data for the frame. Recieves the day as a Forecast object.
+        icon: Current icon as an ImageTk.PhotoImage object.
+    """
+
+    def __init__(self, frame: object) -> None:
+        """Class constructor.
+
+        Args:
+            frame (object): Frame instance from ForecastFrame.
+        """
+
         self.__frame = frame
         self.__current = None
         self.__data = None
         self.__icon = None
         self.__options = {'padx': 5, 'pady': 5}
 
-    def __clear(self):
+    def __clear(self) -> None:
+        """Clears the current details frame."""
+
         if self.__current:
             self.__current.grid_remove()
 
-    def __set_general(self):
+    def __set_general(self) -> None:
+        """Generates the general widgets.
+        
+        These widgets display general information about the day.
+        """
+
         time = ttk.Label(
             self.__current, text=f"{self.__data.time}", font=("Arial", 20))
         icon = ttk.Label(self.__current, image=self.__icon)
@@ -38,7 +69,13 @@ class DetailsFrame:
         day_length.grid(row=4, column=3, columnspan=2,
                         sticky=constants.W, padx=30)
 
-    def __set_table(self):
+    def __set_table(self) -> None:
+        """Generates the table.
+        
+        The table displays the temperature and 
+        feels like values trough out the day.
+        """
+
         temp_header = ttk.Label(self.__current, text="Temperature")
         feels_header = ttk.Label(self.__current, text="Feels like")
 
@@ -55,7 +92,16 @@ class DetailsFrame:
             temp.grid(row=2, column=index)
             feels.grid(row=3, column=index)
 
-    def update(self, day, icon):
+    def update(self, day: object, icon: object) -> None:
+        """The method visible for ForecastFrame.
+        
+        This method updates the shown details.
+
+        Args:
+            day (dict): The data to be shown.
+            icon (object): The weather icon as ImageTk.PhotoImage.
+        """
+
         self.__clear()
         self.__data = day
         self.__icon = icon

@@ -3,7 +3,31 @@ from services import IconService
 
 
 class CurrentFrame:
-    def __init__(self, root, data):
+    """Displays current weather.
+
+    This Frame presents the current weather information
+    devolved from the WeatherView.
+
+    Managed by the WeatherView.
+
+    Attributes:
+        root: The root window.
+        frame: The Frame instance.
+        data: The "Current" weather data entity.
+        icon_service: Service for getting the weather icon.
+        options: General style options.
+        icon: The icon as ImageTK.PhotoImage object. To work correctly,
+              the icon needs to be stored as an attribute.
+    """
+
+    def __init__(self, root: object, data: object) -> None:
+        """Class constructor.
+
+        Args:
+            root (object): TK() root window.
+            data (object): "Current" entity(see entities for more information).
+        """
+
         self.__root = root
         self.__frame = None
         self.__data = data
@@ -12,13 +36,25 @@ class CurrentFrame:
         self.__icon = None
         self.__initialize()
 
-    def pack(self):
+    def pack(self) -> None:
+        """Pack widgets."""
+
         self.__frame.pack(fill=constants.X)
 
-    def destroy(self):
+    def destroy(self) -> None:
+        """Destroy the frame."""
+
         self.__frame.destroy()
 
-    def __current(self):
+    def __current(self) -> None:
+        """Handles the creation of widgets.
+
+        The Labelframe functions as a container for the individual widgets.
+        Inside the container, the widgets use grid layout.
+
+        The actual Frame only includes the container.
+        """
+
         self.__icon = self.__icon_service.geticon(self.__data.icon)
         label_frame = ttk.Labelframe(self.__frame)
         time = ttk.Label(
@@ -50,6 +86,8 @@ class CurrentFrame:
         label_frame.grid(row=1, column=0, rowspan=4,
                          columnspan=15, **self.__options)
 
-    def __initialize(self):
+    def __initialize(self) -> None:
+        """Initializes the frame."""
+
         self.__frame = ttk.Frame(master=self.__root)
         self.__current()

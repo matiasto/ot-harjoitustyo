@@ -10,6 +10,9 @@ class Graph:
 
     Attributes:
         data: DataFrame object, where each row represents an hour.
+
+        Example row includes datetime object as the index,
+        "temp" column, and a "rain" column.
     """
 
     def __init__(self, data: list) -> None:
@@ -25,6 +28,7 @@ class Graph:
     @property
     def data(self) -> object:
         """Graphs DataFrame."""
+        
         return self.__data
 
     def __sort_data(self):

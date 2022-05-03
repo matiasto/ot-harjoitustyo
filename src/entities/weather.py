@@ -45,7 +45,7 @@ class Weather:
     def graph(self):
         return self.__graph
 
-    def __parse_data(self, weather_data: dict, historical_data):
+    def __parse_data(self, weather_data: dict, historical_data: list):
         graph_data = weather_data["hourly"] + historical_data
         self.__graph = Graph(graph_data)
         for day in weather_data["daily"]:

@@ -27,7 +27,7 @@ class TestWeatherService(unittest.TestCase):
 
     def test_location(self):
         data = self.weather_service._WeatherService__location("Espoo")
-        self.assertEqual(data, ("60.2047672", "24.6568435"))
+        self.assertEqual(data, ("Espoo", "60.2047672", "24.6568435"))
 
     def test_weather_data(self):
         data = self.weather_service._WeatherService__weather_data(

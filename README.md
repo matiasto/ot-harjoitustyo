@@ -9,10 +9,10 @@
             <a href="#introduction">Introduction</a>
         </li>
         <li>
-            <a href="#installation-instructions">Installation Instructions</a>
+            <a href="#getting-started">Getting Started</a>
         </li>
         <li>
-            <a href="#usage">Usage</a>
+            <a href="#testing">Testing</a>
         </li>
         <li>
             <a href="#documentation">Documentation</a>
@@ -28,7 +28,7 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 
 1. Get a free API Key at [OpenWeather](https://home.openweathermap.org/users/sign_in)
 2. Download the
-    [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko5)
+    [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko6)
 3. Navigate to the project folder and run 
     ```bash
     poetry install
@@ -40,6 +40,9 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
     poetry run invoke start
     ````
 5. During the first execution, the app will ask for API key accuired from step 1.
+
+For detailed instructions visit [instructions](./documentation/instructions.md)
+
 ---
 ### Testing
 
@@ -69,4 +72,5 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 - [Changelog](./documentation/changelog.md)
 - [Record of Working Hours](./documentation/record_of_working_hours.md)
 - [Requirements Specification](./documentation/requirements_specification.md)
+- [Instructions](./documentation/instructions.md)
 

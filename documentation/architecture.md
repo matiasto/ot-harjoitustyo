@@ -93,7 +93,10 @@ The icon service retrieves weather icons from OpenWeather API. The class's only 
 
 ---
 
-## TODO...
+## Entities
+
+todo...
+
 
 #### Class Diagram
 
@@ -192,8 +195,9 @@ The icon service retrieves weather icons from OpenWeather API. The class's only 
 
 ---
 
-#### Sequence Diagram
+#### App logic
 
+User searches for "Helsinki"
 
 ```mermaid
     sequenceDiagram

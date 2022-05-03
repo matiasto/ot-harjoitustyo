@@ -5,9 +5,9 @@ from .graph import Graph
 
 class Weather:
     """Class for representing the weather.
-    
+
     The main entity that stores the other single purpose entities.
-    
+
     Attributes:
         city: The searched city.
         current: Current entity.

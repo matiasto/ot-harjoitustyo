@@ -13,7 +13,7 @@ class IconService:
     def geticon(self, iconcode: str) -> object:
         """Retrieves icon by id
 
-        Uses icon id retrieved from WeatherService API call 
+        Uses icon id retrieved from WeatherService API call
         to request an image from OpenWeather API endpoint.
 
         Args:
@@ -22,7 +22,7 @@ class IconService:
         Returns:
             object: tk compatible image.
         """
-        
+
         url = f"{self.__base_url}{iconcode}@2x.png"
         response_img = requests.get(url)
         raw_data = response_img.content

@@ -7,7 +7,7 @@ class Graph:
 
     Temperature and rain from past 120h (5 days) and upcoming 48h (2 days)
     is combined into one dataframe.
-    
+
     Attributes:
         data: DataFrame object, where each row represents an hour.
     """

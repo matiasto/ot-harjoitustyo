@@ -4,7 +4,6 @@ from datetime import datetime
 class Forecast:
     """Responsible for forecast data."""
 
-
     def __init__(self, data: dict) -> None:
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__tempature_max = data["temp"]["max"]
@@ -35,8 +34,8 @@ class Forecast:
 
     def __deg_to_str(self, deg) -> None:
         """Converts degrees to cardinal form.
-        
-        e.g: "North East", "South", ... 
+
+        e.g: "North East", "South", ...
         """
 
         value = int(deg / 45)
@@ -47,7 +46,7 @@ class Forecast:
     @property
     def time(self) -> str:
         """Current time, UTC.
-        
+
         Format "%A"
         i.e. "Tuesday".
         """
@@ -117,7 +116,7 @@ class Forecast:
     @property
     def sunrise(self) -> str:
         """Sunrise time, UTC.
-        
+
         Format "%H:%M"
         i.e. "05:40".
         """
@@ -127,7 +126,7 @@ class Forecast:
     @property
     def sunset(self) -> str:
         """Sunset time, UTC.
-        
+
         Format "%H:%M"
         i.e. "19:40".
         """
@@ -149,7 +148,7 @@ class Forecast:
     @property
     def icon(self) -> str:
         """Weather icon id.
-        
+
         Used to retrieve icons from the API."""
-        
+
         return self.__icon

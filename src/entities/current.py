@@ -22,8 +22,8 @@ class Current:
 
     def __deg_to_str(self, deg) -> None:
         """Converts degrees to cardinal form.
-        
-        e.g: "North East", "South", ... 
+
+        e.g: "North East", "South", ...
         """
 
         value = int(deg / 45)
@@ -34,7 +34,7 @@ class Current:
     @property
     def time(self) -> str:
         """Current time, UTC
-        
+
         Format "%H:%M"
         i.e. 15:30.
         """
@@ -64,7 +64,7 @@ class Current:
     @property
     def feels_like(self) -> float:
         """Accounts for the human perception of weather.
-        
+
         Celsius degrees.
         """
         return self.__feels_like
@@ -72,7 +72,7 @@ class Current:
     @property
     def sunrise(self) -> str:
         """Sunrise time, UTC.
-        
+
         Format "%H:%M"
         i.e. "05:30".
         """
@@ -104,7 +104,7 @@ class Current:
     @property
     def icon(self) -> str:
         """Weather icon id.
-        
+
         Used to retrieve icons from the API."""
 
         return self.__icon

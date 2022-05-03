@@ -10,19 +10,19 @@ class NavbarFrame:
     Attributes:
         root: The root window.
         frame: The Frame instance.
-        city: The city name("Helsinki").
+        city: The city input variable.
         handle_get_weather: Method to instigate a new 
                             weather search in WeatherView.
         options: General style options.
     """
 
-    def __init__(self, root: object, city: str, handle_get_weather: "method") -> None:
+    def __init__(self, root: object, city: str, handle_get_weather) -> None:
         """Class constructor.
 
         Args:
             root (object): _description_
             city (str): _description_
-            handle_get_weather (function): Method to instigate new 
+            handle_get_weather (method): Method to instigate new 
                                            weather search in WeatherView.
         """
 

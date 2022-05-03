@@ -35,11 +35,30 @@ class TestForecast(unittest.TestCase):
     def test_obj_exists(self):
         self.assertNotEqual(self.current, None)
 
+    def test_deg_to_cardinal(self):
+        self.current._Current__deg_to_str(90)
+        self.assertEqual(self.current.wind_deg, "East")
+
     def test_time(self):
         self.assertEqual(self.current.time, "15:30")
 
     def test_temperature(self):
         self.assertEqual(self.current.temperature, 284.07)
+
+    def test_wind_speed(self):
+        self.assertEqual(self.current.wind_speed, 6)
+
+    def test_feels_like(self):
+        self.assertEqual(self.current.feels_like, 282.84)
+
+    def test_sunrise(self):
+        self.assertEqual(self.current.sunrise, "05:48")
+
+    def test_sunset(self):
+        self.assertEqual(self.current.sunset, "20:11")
+
+    def test_uvi(self):
+        self.assertEqual(self.current.uvi, 0.89)
 
     def test_report(self):
         self.assertEqual(self.current.report, "light rain")

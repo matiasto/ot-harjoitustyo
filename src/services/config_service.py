@@ -66,6 +66,7 @@ class ConfigService:
         self.__parser.set("USER", "api_key", new_key)
         with open(self.__config_file_path, 'w', encoding="utf8") as configfile:
             self.__parser.write(configfile)
+        self.__api_key = new_key
 
     def api_key_is_set(self) -> bool:
         """Check if API key is set.
@@ -73,7 +74,7 @@ class ConfigService:
         Returns:
             bool: Is set?
         """
-        if self.api_key != "":
+        if self.__api_key:
             return True
         return False
 

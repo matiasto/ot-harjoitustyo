@@ -1,4 +1,4 @@
-from tkinter import ttk, constants, StringVar
+from tkinter import ttk, constants, StringVar, messagebox
 
 
 class LoginView:
@@ -46,12 +46,20 @@ class LoginView:
 
         self.__frame.destroy()
 
+    def __show_error_message(self):
+        """Error message for invalid API key."""
+        
+        messagebox.showerror("Error", "Invalid API Key")
+
     def __handle_button_click(self) -> None:
         """Sets API key and handles redirect"""
 
         key = self.__api_key.get()
-        self.__config.api_key = key
-        self.__handle_weather()
+        valid = self.__config.set_api_key(key)
+        if not valid:
+            self.__show_error_message()
+        else:
+            self.__handle_weather()
 
     def __login(self) -> None:
         """Generates the login frame."""

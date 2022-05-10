@@ -1,4 +1,4 @@
-from tkinter import constants
+from tkinter import constants, messagebox
 from services import WeatherService
 from ..frames import NavbarFrame
 from ..frames import CurrentFrame
@@ -105,11 +105,17 @@ class WeatherView:
 
         Passes the Graph DataFrame as an argument.
         """
+
         if "graph" in self.__frames:
             frame = self.__frames["graph"]
             frame.destroy()
         self.__frames["graph"] = GraphFrame(self.__root, self.__data.graph)
         self.__frames["graph"].pack()
+
+    def __show_error_message(self):
+        """Error message for failed request."""
+        
+        messagebox.showerror("Error", "Request Failed")
 
     def __get_weather(self, city: str) -> None:
         """Interacts with WeatherService.
@@ -122,7 +128,10 @@ class WeatherView:
         """
 
         self.__data = self.__weather.weather(city)
-        self.__update_frames()
+        if not self.__data:
+            self.__show_error_message()
+        else:
+            self.__update_frames()
 
     def __update_frames(self) -> None:
         """Sets of frame updates."""

@@ -47,7 +47,7 @@ class WeatherService:
         data = data_request.json()
         if data_request.status_code == 200 and data != []:
             return data
-        raise Exception("the request failed")
+        return False
 
     def __location(self, city: str) -> tuple:
         """Using Geocoding API, converts city name to longitude and latitude.
@@ -61,11 +61,11 @@ class WeatherService:
             tuple: Longitude and latitude are float values in string format.
         """
 
-        url = self.__config.geocoding_url + "q=" + \
-            city + "&appid=" + self.__config.api_key
         url = f"{self.__config.geocoding_url}q={city}&appid={self.__config.api_key}"
-        data = self.__request(url)[0]
-        return (data["name"], str(data["lat"]), str(data["lon"]))
+        data = self.__request(url)
+        if not data:
+            return False
+        return (data[0]["name"], str(data[0]["lat"]), str(data[0]["lon"]))
 
     def __weather_data(self, latitude: str, longitude: str) -> dict:
         """Using Onecall API retrieves the current and 7 day forecast weather.
@@ -105,7 +105,10 @@ class WeatherService:
             day = str(int(datetime.timestamp(today - timedelta(days=i))))
             url = (f"{self.__config.open_weather_url}/timemachine?lat={latitude}&lon={longitude}"
                    f"&dt={day}&appid={self.__config.api_key}&units=metric")
-            historical_data = historical_data + self.__request(url)["hourly"]
+            new_day = self.__request(url)
+            if not new_day:
+                return False
+            historical_data += new_day["hourly"]
         return historical_data
 
     def weather(self, city: str) -> object:
@@ -123,8 +126,15 @@ class WeatherService:
         Returns:
             object: Weather object.
         """
-
-        city_name, latitude, longitude = self.__location(city)
+        
+        location_data = self.__location(city)
+        if not location_data:
+            return False
+        city_name, latitude, longitude = location_data
         weather_data = self.__weather_data(latitude, longitude)
+        if not weather_data:
+            return False
         historical_data = self.__historical_weather_data(latitude, longitude)
+        if not historical_data:
+            return False
         return Weather(city_name, weather_data, historical_data)

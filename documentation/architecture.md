@@ -12,6 +12,8 @@ The app's general structure follows a three-layered model.
 ```
 The UI component includes everything related to user interface elements. This part only displays data retrieved from service elements. The service elements implement the App logic, or in the case of this app, the interaction with the API. The task of entities is to model this API data to something more usable from the app's perspective. Eventually, these instances of entities return to the UI, where they are unpacked and displayed to the user.
 
+---
+
 ## User Interface
 
 The user interface consists of views and frames. Views, managed by the UI element, are usually built from a collection of Frames.
@@ -91,14 +93,98 @@ The weather service is the one that interacts with the OpenWeather API. In total
 
 The icon service retrieves weather icons from OpenWeather API. The class's only method uses the icon id (passed as an argument) to get icon data. Using Pillow module, the raw data is converted to ImageTk PhotoImage object and returned.
 
----
 
 ## Entities
 
-todo...
+---
+
+*Entities describe data in a meaningful way.*
+
+This app doesn't rely on stored data; instead, it retrieves the data on demand from the OpenWeather app. As is often the case, the raw data is formidable to manage and cluttered with unnecessary data(viewing from this app's point of view). The task of the four entities is to shape this data into a more expressive and easier to use state.
 
 
-#### Class Diagram
+```mermaid
+    classDiagram
+    
+    class Weather {
+        city
+        current
+        forecast
+        graph
+    }
+
+    WeatherService --> Weather: use
+    Weather --o Current
+    Weather --o Forecast
+    Weather --o Graph
+```
+
+#### Weather
+The primary entity is the Weather object. It combines the Current, Forecast, and Graph objects to create one unified entity. The only user of the Weather object is The WeatherService. When called, it receives the raw data as a parameter and uses it to initialize the other entities. The then-created final object returns to the original caller, WeatherView, where it's parsed and displayed accordingly.
+
+---
+
+```mermaid
+    classDiagram
+
+    class Current {
+        time
+        temperature
+        feels_like
+        wind_speed
+        wind_deg
+        sunrise
+        uvi
+        report
+        icon
+    }
+```
+
+#### Current
+
+Contains the data for current weather.
+
+---
+
+```mermaid
+    classDiagram
+
+    class Forecast {
+        time
+        temperature_max
+        temperature_min
+        temperature
+        feels_like
+        wind_speed
+        wind_deg
+        sunrise
+        uvi
+        report
+        icon
+    }
+```
+
+#### Forecast
+
+Contains a forecast day's data. The Weather entity initializes the forecast object for each day and stores them in a list.
+
+---
+
+```mermaid
+    classDiagram
+
+    class Graph {
+        data
+    }
+```
+
+#### Graph
+
+Forms and stores a DataFrame containing five-day hourly historical data and a two-day hourly forecast. The Graph frame plots the temperature and rain from the DataFrame.
+
+---
+
+## Structure as a whole
 
 
 ```mermaid
@@ -195,9 +281,58 @@ todo...
 
 ---
 
-#### App logic
+## Main Functionality
 
-User searches for "Helsinki"
+> *User starts the app*
+
+```mermaid
+    sequenceDiagram
+
+    actor User
+    participant UI
+    participant LoginView
+    participant ConfigService
+    participant OpenWeather
+
+    Note over User: Starts app.
+    UI ->> ConfigService: Initialize
+    ConfigService ->> ConfigService: Read config
+    ConfigService ->> OpenWeather: Validate API key
+    alt API key is valid
+        OpenWeather ->> ConfigService: 200
+        Note right of ConfigService: Sets API key.
+    else API key is invalid
+        OpenWeather ->> ConfigService: 401
+        Note right of ConfigService: Doesn't set API key.
+    end
+    UI ->> ConfigService: api_key_is_set()
+    alt is set
+        ConfigService ->> UI: True
+        Note over UI: Redirect to render WeatherView
+    else is not set
+        ConfigService ->> UI: False
+        UI ->> LoginView: pack()
+        User ->> LoginView: Inserts API key
+        LoginView ->> ConfigService: validate_api_key()
+        alt API key is valid
+            Note over ConfigService: Sets API key.
+            ConfigService ->> LoginView: True
+            LoginView ->> UI: Redirect to WeatherView
+        else API key is invalid
+            Note over ConfigService: Doesn't set API key.
+            ConfigService ->> LoginView: False
+            LoginView ->> User: Error message
+        end
+    end
+```
+
+#### Setting the API key
+
+At the app start-up, the UI element initializes an instance of ConfigService. Apart from the API key, the service reads the config.ini file and sets the attributes. Before placing the API key, the service validates it by making a request to OpenWeather. If the API key is unset(does not exist or is just invalid), the UI opens the LoginView. The user can input their API key, and once validated, the LoginView redirects to WeatherView.
+
+---
+
+> *User searches for "Helsinki"*
 
 ```mermaid
     sequenceDiagram
@@ -209,9 +344,6 @@ User searches for "Helsinki"
     participant Geocoding API
     participant Onecall API
     participant Weather
-    participant Current
-    participant Forecast
-    participant Graph
 
     User ->> UI: search "Helsinki"
     UI ->> WeatherService: weather("Helsinki")
@@ -226,18 +358,13 @@ User searches for "Helsinki"
     Onecall API ->> WeatherService: weather data (historical)
     end
 
-    WeatherService ->> Weather: historical-, current-, and forecast data
-    Weather ->> Current: current data
-    Current ->> Weather: Current data object
-
-    loop for each day(8)
-    Weather ->> Forecast: days data
-    Forecast ->> Weather: Forecast data object
-    end
-
-    Weather ->> Graph: 120 hours of historical data and 48 hour forecast
-    Graph ->> Weather: Dataframe object
+    WeatherService ->> Weather: historical-, current-, and forecast data.
+    Note over Weather: Creates the Weather object.
     Weather ->> UI: the whole weather object
     UI ->> UI: update_frames()
 
 ```
+
+#### Searching for location
+
+When the user searches for a location, it activates a call for WeatherService in the WeatherView component. The first order of business is to convert the input location name to latitude and longitude. Next, with the coordinates passed as an argument, the service retrieves the weather data from OpenWeather. Finally, the service passes the retrieved data to the Weather entity and returns it to UI.

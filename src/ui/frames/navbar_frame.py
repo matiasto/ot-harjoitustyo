@@ -43,7 +43,7 @@ class NavbarFrame:
 
         self.__frame.destroy()
 
-    def __handle_event(self) -> None:
+    def __handle_event(self, event=None) -> None:
         """Handle the search event.
 
         Instigates new search in WeatherView.
@@ -66,12 +66,14 @@ class NavbarFrame:
         label_frame = ttk.Labelframe(self.__frame)
 
         city_entry = ttk.Entry(
-            label_frame, textvariable=self.__city, takefocus=True)
+            label_frame, textvariable=self.__city)
         get_weather_button = ttk.Button(
             label_frame,
             text='Search',
             command=self.__handle_event
         )
+
+        self.__root.bind("<Return>", self.__handle_event)
 
         city_entry.grid(column=0, row=0, sticky=constants.W, **self.__options)
         get_weather_button.grid(

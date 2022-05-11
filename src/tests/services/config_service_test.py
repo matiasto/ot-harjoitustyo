@@ -32,9 +32,14 @@ class TestConfigService(unittest.TestCase):
     def test_api_key_is_set(self):
         self.assertEqual(self.config_service.api_key_is_set(), True)
 
+    def test_api_key_validate(self):
+        key = self.config_service.api_key
+        self.assertEqual(self.config_service.set_api_key(""), False)
+        self.assertEqual(self.config_service.set_api_key(key), True)
+
     def test_api_key_set(self):
         key = self.config_service.api_key
-        self.config_service.api_key = ""
+        self.config_service._ConfigService__api_key = ""
         self.assertEqual(self.config_service.api_key_is_set(), False)
-        self.config_service.api_key = key
+        self.config_service.set_api_key(key)
         self.assertEqual(self.config_service.api_key_is_set(), True)

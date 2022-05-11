@@ -1,5 +1,4 @@
 import unittest
-
 from pandas import DataFrame
 from entities import Weather
 

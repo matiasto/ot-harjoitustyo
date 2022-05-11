@@ -1,7 +1,7 @@
 # WeatherApp
+
 ---
 
-<!-- TABLE OF CONTENTS -->
 <details>
     <summary>Table of Contents</summary>
     <ol>
@@ -70,7 +70,8 @@ For detailed instructions visit [instructions](./documentation/instructions.md)
 
 - [Architecture](./documentation/architecture.md)
 - [Changelog](./documentation/changelog.md)
+- [Instructions](./documentation/instructions.md)
 - [Record of Working Hours](./documentation/record_of_working_hours.md)
 - [Requirements Specification](./documentation/requirements_specification.md)
-- [Instructions](./documentation/instructions.md)
+- [Testing](./documentation/testing.md)
 

@@ -368,3 +368,7 @@ At the app start-up, the UI element initializes an instance of ConfigService. Ap
 #### Searching for location
 
 When the user searches for a location, it activates a call for WeatherService in the WeatherView component. The first order of business is to convert the input location name to latitude and longitude. Next, with the coordinates passed as an argument, the service retrieves the weather data from OpenWeather. Finally, the service passes the retrieved data to the Weather entity and returns it to UI.
+
+## A short discussion on entity structure
+
+Overall the app is in great shape even though Current and Forecast entities share duplicate code. I could've implemented a base class to combat duplicate code, but I still chose not to. My reasoning lies in the very purpose of entities; entities describe the underlying data. Reflecting on that, I concluded that dispersing the data to combat duplicate code doesn't seem reasonable. The classes Current and Forecast are perfectly self-explanatory; both include the data for that concept. No need to piece together or hunt down shrapnels of data. Overall, it clarifies everything knowing that the Forecast entity describes all forecast data.

@@ -32,3 +32,9 @@
 - New service for icons.
 - Refactoring of Frames.
 - Docstring added.
+
+---
+
+## Week 7
+- Error handling on bad API keys and requests.
+- Architecture documentation.

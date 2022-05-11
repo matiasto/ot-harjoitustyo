@@ -2,29 +2,17 @@
 
 ---
 
-<details>
-    <summary>Table of Contents</summary>
-    <ol>
-        <li>
-            <a href="#introduction">Introduction</a>
-        </li>
-        <li>
-            <a href="#getting-started">Getting Started</a>
-        </li>
-        <li>
-            <a href="#testing">Testing</a>
-        </li>
-        <li>
-            <a href="#documentation">Documentation</a>
-        </li>
-    </ol>
-</details>
+## Table of Contents
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Testing](#testing)
+- [Documentation](#documentation)
 
-### Introduction
+## Introduction
 
 WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered desktop application that allows users to inspect the current weather, forecast, and historical weather data.
 
-### Getting Started
+## Getting Started
 
 1. Get a free API Key at [OpenWeather](https://home.openweathermap.org/users/sign_in)
 2. Download the
@@ -44,7 +32,7 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 For detailed instructions visit [instructions](./documentation/instructions.md)
 
 ---
-### Testing
+## Testing
 
 
 > Some of the tests require the API key to work. Go through the [Getting Started](#getting-started) before running tests
@@ -66,7 +54,7 @@ For detailed instructions visit [instructions](./documentation/instructions.md)
     poetry run invoke format
     ````
 
-### Documentation
+## Documentation
 
 - [Architecture](./documentation/architecture.md)
 - [Changelog](./documentation/changelog.md)

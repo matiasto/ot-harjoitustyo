@@ -114,7 +114,7 @@ class WeatherView:
 
     def __show_error_message(self):
         """Error message for failed request."""
-        
+
         messagebox.showerror("Error", "Request Failed")
 
     def __get_weather(self, city: str) -> None:

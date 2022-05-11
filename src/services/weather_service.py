@@ -126,7 +126,7 @@ class WeatherService:
         Returns:
             object: Weather object.
         """
-        
+
         location_data = self.__location(city)
         if not location_data:
             return False

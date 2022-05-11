@@ -48,7 +48,7 @@ class LoginView:
 
     def __show_error_message(self):
         """Error message for invalid API key."""
-        
+
         messagebox.showerror("Error", "Invalid API Key")
 
     def __handle_button_click(self) -> None:

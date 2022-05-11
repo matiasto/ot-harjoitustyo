@@ -39,7 +39,8 @@ class TestWeatherService(unittest.TestCase):
         self.assertEqual(isinstance(data["current"]["temp"], float), True)
 
     def test_failed_weather_data(self):
-        response = self.weather_service._WeatherService__weather_data("testi", "testi")
+        response = self.weather_service._WeatherService__weather_data(
+            "testi", "testi")
         self.assertEqual(response, False)
 
     def test_historical_data(self):

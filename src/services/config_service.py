@@ -47,9 +47,8 @@ class ConfigService:
         test_request = requests.get(url)
         if test_request.status_code == 401:
             return False
-        else:
-            self.__api_key = key
-            return True
+        self.__api_key = key
+        return True
 
     @property
     def open_weather_url(self) -> str:
@@ -83,14 +82,13 @@ class ConfigService:
         Args:
             new_key (str): New key from the user.
         """
-        
+
         if self.__validate_api_key(new_key):
             self.__parser.set("USER", "api_key", new_key)
             with open(self.__config_file_path, 'w', encoding="utf8") as configfile:
                 self.__parser.write(configfile)
             return True
-        else:
-            return False
+        return False
 
     def api_key_is_set(self) -> bool:
         """Check if API key is set.
@@ -98,7 +96,7 @@ class ConfigService:
         Returns:
             bool: Is set?
         """
-        
+
         if self.__api_key:
             return True
         return False

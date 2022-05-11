@@ -73,7 +73,7 @@ The config service is the most global of these three, providing URLs and the API
 
 #### WeatherService
 
-The weather service is the one that interacts with the OpenWeather API. In total, the app makes seven calls to three different API endpoints. The first call to Geocoding API converts the city name from user input to latitude and longitude. Using these coordinates, the second call to OpenWeathers One call API endpoint returns the current weather and the forecast for the upcoming days. Finally, the One Call APIs time machine requires five separate calls for each day to get hourly historical data for the past five days. The service passes the data to the Weather entity and returns it.
+The weather service is the one that interacts with the OpenWeather API. In total, the app makes seven calls to three different API endpoints. The first call to Geocoding API converts the city name from user input to latitude and longitude. Using these coordinates, the second call to OpenWeathers One call API endpoint returns the current weather and the forecast for the upcoming days. Finally, the One Call APIs time machine requires five separate calls for each day to get hourly historical data for the past five days. The service passes the data on to the Weather entity and returns it.
 
 ---
 
@@ -311,7 +311,7 @@ Forms and stores a DataFrame containing five-day hourly historical data and a tw
         Note over UI: Redirect to render WeatherView
     else is not set
         ConfigService ->> UI: False
-        UI ->> LoginView: pack()
+        UI ->> LoginView: show_login_view()
         User ->> LoginView: Inserts API key
         LoginView ->> ConfigService: validate_api_key()
         alt API key is valid

@@ -23,4 +23,6 @@
 | 03.05.2022    | 4    | Docstring |
 | 03.05.2022    | 1    | Writing tests |
 | 03.05.2022    | 3    | Architecture description |
-| yht           | 48   | | 
+| 10.05.2022    | 2    | Error handling |
+| 11.05.2022    | 3    | Continuing architecture description |
+| yht           | 53   | | 

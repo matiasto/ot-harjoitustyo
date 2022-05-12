@@ -1,6 +1,6 @@
  # Instructions
 
- Download the latest [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko6)
+ Download the [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko6)
 
  ### Getting Started
 
@@ -38,10 +38,6 @@ Get free API key
 1. On the top left you can search weather with location name. 
 2. You can press the forecast days to open detailed view below it.
 
-> *Enter* hasn't been implemented yet, so please press *Search*
+![](./assets/dashboard_info.png)
 
 > It may take few seconds to load.
-
-> Error message for bad request shows in console.
-
-

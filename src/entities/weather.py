@@ -23,6 +23,7 @@ class Weather:
             weather_data (dict): Current and forecast.
             historical_data (list): For past 5 days.
         """
+
         self.__city = city
         self.__current = Current(weather_data["current"])
         self.__forecast = []
@@ -30,22 +31,38 @@ class Weather:
         self.__parse_data(weather_data, historical_data)
 
     @property
-    def city(self):
+    def city(self) -> str:
+        """City name."""
+
         return self.__city
 
     @property
-    def current(self):
+    def current(self) -> object:
+        """Current weather object."""
+
         return self.__current
 
     @property
-    def forecast(self):
+    def forecast(self) -> list:
+        """List of forecast objects."""
+
         return self.__forecast
 
     @property
-    def graph(self):
+    def graph(self) -> object:
+        """Graph DataFrame object."""
+
         return self.__graph
 
-    def __parse_data(self, weather_data: dict, historical_data: list):
+    def __parse_data(self, weather_data: dict, historical_data: list) -> None:
+        """Initializes the smaller entities.
+
+        Args:
+            weather_data (dict): Includes current and forecast data.
+            historical_data (list): List of historical weather days, 
+                                    the data is in hourly format.
+        """
+
         graph_data = weather_data["hourly"] + historical_data
         self.__graph = Graph(graph_data)
         for day in weather_data["daily"]:

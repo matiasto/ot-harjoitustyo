@@ -5,6 +5,12 @@ class Forecast:
     """Responsible for forecast data."""
 
     def __init__(self, data: dict) -> None:
+        """Class constructor.
+
+        Args:
+            data (dict): Forecast day data.
+        """
+
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%A")
         self.__tempature_max = data["temp"]["max"]
         self.__tempature_min = data["temp"]["min"]
@@ -109,7 +115,8 @@ class Forecast:
     def wind_deg(self) -> str:
         """In Cardinal form eg. North East.
 
-        Initially in degrees(meteorological)."""
+        Initially in degrees(meteorological).
+        """
 
         return self.__wind_deg
 
@@ -149,6 +156,7 @@ class Forecast:
     def icon(self) -> str:
         """Weather icon id.
 
-        Used to retrieve icons from the API."""
+        Used to retrieve icons from the API.
+        """
 
         return self.__icon

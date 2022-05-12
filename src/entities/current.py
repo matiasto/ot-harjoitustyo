@@ -5,6 +5,12 @@ class Current:
     """Responsible for current weather data."""
 
     def __init__(self, data: dict) -> None:
+        """Class constructor.
+
+        Args:
+            data (dict): Current weather data.
+        """
+
         self.__time = datetime.fromtimestamp(data["dt"]).strftime("%H:%M")
         self.__temperature = data["temp"]
         self.__wind_speed = data["wind_speed"]
@@ -53,6 +59,7 @@ class Current:
 
         Celsius degrees.
         """
+
         return self.__feels_like
 
     @property
@@ -65,7 +72,8 @@ class Current:
     def wind_deg(self) -> str:
         """In Cardinal form eg. North East.
 
-        Initially in degrees(meteorological)."""
+        Initially in degrees(meteorological).
+        """
 
         return self.__wind_deg
 
@@ -105,6 +113,7 @@ class Current:
     def icon(self) -> str:
         """Weather icon id.
 
-        Used to retrieve icons from the API."""
+        Used to retrieve icons from the API.
+        """
 
         return self.__icon

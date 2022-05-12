@@ -22,6 +22,7 @@ class Graph:
             data (list): List of "hours". each hour is a dictionary
                         representing weather conditions.
         """
+        
         self.__data = None
         self.__parse(data)
 

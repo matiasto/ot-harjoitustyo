@@ -39,3 +39,4 @@
 - Error handling on bad API keys and requests.
 - Architecture documentation.
 - Testing document.
+- Finishing touches.

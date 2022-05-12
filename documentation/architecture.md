@@ -32,7 +32,7 @@ The app's general structure follows a three-layered model.
         UI --> services
         services --> entities
 ```
-The UI component includes everything related to user interface elements. This part only displays data retrieved from service elements. The service elements implement the App logic, or in the case of this app, the interaction with the API. The task of entities is to model this API data to something more usable from the app's perspective. Eventually, these instances of entities return to the UI, where they are unpacked and displayed to the user.
+The UI component includes everything related to user interface elements. This part only displays data retrieved from service elements. The service elements implement the app logic, or in the case of this app, the interaction with the API. The task of entities is to model this API data to something more usable from the app's perspective. Eventually, these instances of entities return to the UI, where they are unpacked and displayed to the user.
 
 [Back to Top](#architecture-description)
 
@@ -357,7 +357,7 @@ Forms and stores a DataFrame containing five-day hourly historical data and a tw
     UI ->> ConfigService: api_key_is_set()
     alt is set
         ConfigService ->> UI: True
-        Note over UI: Redirect to render WeatherView
+        Note over UI: Redirect to WeatherView
     else is not set
         ConfigService ->> UI: False
         UI ->> LoginView: show_login_view()
@@ -411,7 +411,7 @@ At the app start-up, the UI element initializes an instance of ConfigService. Ap
 
     WeatherService ->> Weather: historical-, current-, and forecast data.
     Note over Weather: Creates the Weather object.
-    Weather ->> UI: the whole weather object
+    Weather ->> UI: The Weather object
     UI ->> UI: update_frames()
 
 ```

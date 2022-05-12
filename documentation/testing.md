@@ -16,7 +16,7 @@ Apart from the UI elements, the tests cover 99% of the app.
 
 ![](./assets/coverage_report.png)
 
-The only thing left out of the tests wherein the WeatherService weather method. A few of the error handling conditions placed in case weather data requests fail are impossible to test conveniently. That ought not to be a significant problem since the situation itself is extremely rare.
+The only things excluded from the test coverage were in the WeatherService-weather method. A few of the error handling conditions placed in case weather data requests fail are impossible to test conveniently. That ought not to be a significant problem since the situation itself is extremely rare.
 
 ---
 

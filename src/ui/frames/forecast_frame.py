@@ -77,6 +77,7 @@ class ForecastFrame:
         about that days forecast and a bind that opens the days detailed view
         in DetailsFrame.
         """
+
         for i, day in enumerate(self.__data):
             self.__icons.append(self.__icon_service.geticon(day.icon))
             label_frame = ttk.Labelframe(
@@ -99,6 +100,7 @@ class ForecastFrame:
                     i: Index. Defaults to i. 
                        Used to retrieve the days data from attributes.
                 """
+                
                 self.__handle_details(i)
 
             time.bind("<Button-1>", handler)

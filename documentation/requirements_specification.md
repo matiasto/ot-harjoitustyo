@@ -41,7 +41,7 @@ The app consists of two views.
     UI --> WeatherView: API key is set
 ```
 
-The app consists of two views. The LoginView is for setting up the API key, and the WeatherView is for a valid API key.
+The app consists of two views. The [LoginView](../src/ui/views/login_view.py) is for setting up the API key, and the [WeatherView](../src/ui/views/weather_view.py) is for a valid API key.
 
 ---
 

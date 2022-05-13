@@ -4,11 +4,11 @@
 
 ## Services
 
-The services form the app logic. As we know, the WeatherService and the IconService depend heavily on the OpenWeather API. For this reason, the tests employ actual calls to the OpenWeather API, and since the retrieved data varies from call to call, the tests mainly focus on data types rather than absolute values. In contrast, the tests on ConfigService can focus on absolute values rather than just data types. This difference in testing methodology derives from the fact that the ConfigService is not as reliant on the API; it primarily operates with the config file.
+The [services](../src/services) form the app logic. As we know, the [WeatherService](../src/services/weather_service.py) and the [IconService](../src/services/icon_service.py) depend heavily on the [OpenWeather API](https://openweathermap.org). For this reason, the tests employ actual calls to the OpenWeather API, and since the retrieved data varies from call to call, the tests mainly focus on data types rather than absolute values. In contrast, the tests on [ConfigService](../src/services/config_service.py) can focus on absolute values rather than just data types. This difference in testing methodology derives from the fact that the ConfigService is not as reliant on the API; it primarily operates with the config file.
 
 ## Entities
 
-The tests conducted on entities mainly check the correctness of parsing. After all, entities hold very little to no app logic in themselves. All the entity tests follow the same principle, inject mock response data and check the result.
+The tests conducted on [entities](../src/entities) mainly check the correctness of parsing. After all, entities hold very little to no app logic in themselves. All the entity tests follow the same principle, inject mock response data and check the result.
 
 ## Test Coverage
 

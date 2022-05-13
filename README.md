@@ -8,15 +8,19 @@
 - [Testing](#testing)
 - [Documentation](#documentation)
 
+---
+
 ## Introduction
 
 WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered desktop application that allows users to inspect the current weather, forecast, and historical weather data.
+
+---
 
 ## Getting Started
 
 1. Get a free API Key at [OpenWeather](https://home.openweathermap.org/users/sign_in)
 2. Download the
-    [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko6)
+    [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/loppupalautus)
 3. Navigate to the project folder and run 
     ```bash
     poetry install
@@ -32,6 +36,7 @@ WeatherApp is an [OpenWeather](https://openweathermap.org/api) API-powered deskt
 For detailed instructions visit [instructions](./documentation/instructions.md)
 
 ---
+
 ## Testing
 
 
@@ -53,6 +58,8 @@ For detailed instructions visit [instructions](./documentation/instructions.md)
     ```bash
     poetry run invoke format
     ````
+
+---
 
 ## Documentation
 

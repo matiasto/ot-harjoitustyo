@@ -1,6 +1,6 @@
  # Instructions
 
- Download the [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/viikko6)
+ Download the [latest release](https://github.com/matiasto/ot-harjoitustyo/releases/tag/loppupalautus)
 
  ### Getting Started
 

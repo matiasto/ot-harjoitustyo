@@ -40,7 +40,7 @@ The UI component includes everything related to user interface elements. This pa
 
 ## User Interface
 
-The user interface consists of views and frames. Views, managed by the UI element, are usually built from a collection of Frames.
+The user interface consists of [views](../src/ui/views) and [frames](../src/ui/frames). Views, managed by the [UI element](../src/ui/ui.py), are usually built from a collection of Frames.
 ```mermaid
     classDiagram
 
@@ -54,7 +54,7 @@ The user interface consists of views and frames. Views, managed by the UI elemen
 ```
 
 
-In total, the app includes two views; Login- and WeatherView. LoginView is currently used to set the user's API key on the first execution. At the same time, the WeatherView operates as the app's main view. Compared to LoginView, where the view handles all the operations, the Weatherview works more as a manager. It only controls the refreshing of frames and the calls on service methods, leaving the task of displaying graphical elements to Frames.
+In total, the app includes two views; [Login-](../src/ui/views/login_view.py) and [WeatherView](../src/ui/views/weather_view.py). LoginView is currently used to set the user's API key on the first execution. At the same time, the WeatherView operates as the app's main view. Compared to LoginView, where the view handles all the operations, the Weatherview works more as a manager. It only controls the refreshing of frames and the calls on service methods, leaving the task of displaying graphical elements to Frames.
 
 [Back to Top](#architecture-description)
 
@@ -77,7 +77,7 @@ In total, the app includes two views; Login- and WeatherView. LoginView is curre
         ConfigService --> configini: Parse
 ```
 
-The config service is the most global of these three, providing URLs and the API key across the application. It mainly operates with a config.ini file where all necessary information is stored and read on demand. The configuration file system provides excellent flexibility with the service since it's not instance dependent.
+The [config service](../src/services/config_service.py) is the most global of these three, providing URLs and the API key across the application. It mainly operates with a [config.ini](../src/config.ini) file where all necessary information is stored and read on demand. The configuration file system provides excellent flexibility with the service since it's not instance dependent.
 
 [Back to Top](#architecture-description)
 
@@ -103,7 +103,7 @@ The config service is the most global of these three, providing URLs and the API
     end
 ```
 
-The weather service is the one that interacts with the OpenWeather API. In total, the app makes seven calls to three different API endpoints. The first call to Geocoding API converts the city name from user input to latitude and longitude. Using these coordinates, the second call to OpenWeathers One call API endpoint returns the current weather and the forecast for the upcoming days. Finally, the One Call APIs time machine requires five separate calls for each day to get hourly historical data for the past five days. The service passes the data on to the Weather entity and returns it.
+The [weather service](../src/services/weather_service.py) is the one that interacts with the [OpenWeather API](https://openweathermap.org/api). In total, the app makes seven calls to three different API endpoints. The first call to [Geocoding API](https://openweathermap.org/api/geocoding-api) converts the city name from user input to latitude and longitude. Using these coordinates, the second call to OpenWeathers [One call API](https://openweathermap.org/api/one-call-api) endpoint returns the current weather and the forecast for the upcoming days. Finally, the One Call APIs time machine requires five separate calls for each day to get hourly historical data for the past five days. The service passes the data on to the [Weather](../src/entities/weather.py) entity and returns it.
 
 [Back to Top](#architecture-description)
 
@@ -123,7 +123,7 @@ The weather service is the one that interacts with the OpenWeather API. In total
     IconService ->> IconService: Turn into Tkinter compatible image
 ```
 
-The icon service retrieves weather icons from OpenWeather API. The class's only method uses the icon id (passed as an argument) to get icon data. Using Pillow module, the raw data is converted to ImageTk PhotoImage object and returned.
+The [icon service]((../src/services/icon_service.py)) retrieves weather icons from OpenWeather API. The class's only method uses the icon id (passed as an argument) to get icon data. Using Pillow module, the raw data is converted to ImageTk PhotoImage object and returned.
 
 [Back to Top](#architecture-description)
 
@@ -155,7 +155,7 @@ This app doesn't rely on stored data; instead, it retrieves the data on demand f
     Weather --o Graph
 ```
 
-The primary entity is the Weather object. It combines the Current, Forecast, and Graph objects to create one unified entity. The only user of the Weather object is The WeatherService. When called, it receives the raw data as a parameter and uses it to initialize the other entities. The then-created final object returns to the original caller, WeatherView, where it's parsed and displayed accordingly.
+The primary entity is the [Weather](../src/entities/weather.py) object. It combines the [Current](../src/entities/current.py), [Forecast](../src/entities/forecast.py), and [Graph](../src/entities/graph.py) objects to create one unified entity. The only user of the Weather object is The [WeatherService](../src/services/weather_service.py). When called, it receives the raw data as a parameter and uses it to initialize the other entities. The then-created final object returns to the original caller, [WeatherView](../src/ui/views/weather_view.py), where it's parsed and displayed accordingly.
 
 [Back to Top](#architecture-description)
 
@@ -205,7 +205,7 @@ Contains the data for current weather.
     }
 ```
 
-Contains a forecast day's data. The Weather entity initializes the forecast object for each day and stores them in a list.
+Contains a forecast day's data. The [Weather](../src/entities/weather.py) entity initializes the [Forecast](../src/entities/forecast.py) object for each day and stores them in a list.
 
 [Back to Top](#architecture-description)
 
@@ -221,7 +221,7 @@ Contains a forecast day's data. The Weather entity initializes the forecast obje
     }
 ```
 
-Forms and stores a DataFrame containing five-day hourly historical data and a two-day hourly forecast. The Graph frame plots the temperature and rain from the DataFrame.
+The [Graph entity](../src/entities/graph.py) forms and stores a DataFrame containing five-day hourly historical data and a two-day hourly forecast. The [Graph frame](../src/ui/frames/graph_frame.py) plots the temperature and rain from the DataFrame.
 
 [Back to Top](#architecture-description)
 
@@ -375,7 +375,7 @@ Forms and stores a DataFrame containing five-day hourly historical data and a tw
     end
 ```
 
-At the app start-up, the UI element initializes an instance of ConfigService. Apart from the API key, the service reads the config.ini file and sets the attributes. Before placing the API key, the service validates it by making a request to OpenWeather. If the API key is unset(does not exist or is just invalid), the UI opens the LoginView. The user can input their API key, and once validated, the LoginView redirects to WeatherView.
+At the app start-up, the [UI](../src/ui/ui.py) element initializes an instance of [ConfigService](../src/services/config_service.py). Apart from the API key, the service reads the [config.ini](../src/config.ini) file and sets the attributes. Before placing the API key, the service validates it by making a request to [OpenWeather](https://openweathermap.org). If the API key is unset(does not exist or is just invalid), the UI opens the [LoginView](../src/ui/views/login_view.py). The user can input their API key, and once validated, the LoginView redirects to [WeatherView](../src/ui/views/weather_view.py).
 
 [Back to Top](#architecture-description)
 
@@ -416,7 +416,7 @@ At the app start-up, the UI element initializes an instance of ConfigService. Ap
 
 ```
 
-When the user searches for a location, it activates a call for WeatherService in the WeatherView component. The first order of business is to convert the input location name to latitude and longitude. Next, with the coordinates passed as an argument, the service retrieves the weather data from OpenWeather. Finally, the service passes the retrieved data to the Weather entity and returns it to UI.
+When the user searches for a location, it activates a call for [WeatherService](../src/services/weather_service.py) in the [WeatherView](../src/ui/views/weather_view.py) component. The first order of business is to convert the input location name to latitude and longitude. Next, with the coordinates passed as an argument, the service retrieves the weather data from [OpenWeather](https://openweathermap.org). Finally, the service passes the retrieved data to the [Weather](../src/entities/weather.py) entity and returns it to [UI](../src/ui/ui.py).
 
 [Back to Top](#architecture-description)
 
@@ -424,6 +424,6 @@ When the user searches for a location, it activates a call for WeatherService in
 
 ## A Short Discussion on Entity Structure
 
-Overall the app is in great shape even though Current and Forecast entities share duplicate code. I could've implemented a base class to combat duplicate code, but I still chose not to. My reasoning lies in the very purpose of entities; entities describe the underlying data. Reflecting on that, I concluded that dispersing the data to combat duplicate code doesn't seem reasonable. The classes Current and Forecast are perfectly self-explanatory; both include the data for that concept. No need to piece together or hunt down shrapnels of data. Overall, it clarifies everything knowing that the Forecast entity describes all forecast data.
+Overall the app is in great shape even though [Current](../src/entities/current.py) and [Forecast](../src/entities/forecast.py) entities share duplicate code. I could've implemented a base class to combat duplicate code, but I still chose not to. My reasoning lies in the very purpose of entities; entities describe the underlying data. Reflecting on that, I concluded that dispersing the data to combat duplicate code doesn't seem reasonable. The classes Current and Forecast are perfectly self-explanatory; both include the data for that concept. No need to piece together or hunt down shrapnels of data. Overall, it clarifies everything knowing that the Forecast entity describes all forecast data.
 
 [Back to Top](#architecture-description)

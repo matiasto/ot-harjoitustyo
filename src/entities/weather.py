@@ -15,7 +15,7 @@ class Weather:
         graph: DataFrame for graph.
     """
 
-    def __init__(self, city: str, weather_data: dict, historical_data: list):
+    def __init__(self, city: str, weather_data: dict, historical_data: list) -> None:
         """Class constructor.
 
         Args:
@@ -59,7 +59,7 @@ class Weather:
 
         Args:
             weather_data (dict): Includes current and forecast data.
-            historical_data (list): List of historical weather days, 
+            historical_data (list): List of historical weather days,
                                     the data is in hourly format.
         """
 

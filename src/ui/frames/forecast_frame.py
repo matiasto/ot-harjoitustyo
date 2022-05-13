@@ -89,7 +89,7 @@ class ForecastFrame:
                 label_frame, text=f"{day.temperature_max} | {day.temperature_min} C")
             report = ttk.Label(label_frame, text=day.report)
 
-            def handler(event, self=self, i=i):
+            def handler(event, self=self, i=i) -> None:
                 """The event handler
 
                 Used in the bind function.
@@ -100,7 +100,7 @@ class ForecastFrame:
                     i: Index. Defaults to i. 
                        Used to retrieve the days data from attributes.
                 """
-                
+
                 self.__handle_details(i)
 
             time.bind("<Button-1>", handler)

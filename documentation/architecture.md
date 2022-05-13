@@ -123,7 +123,7 @@ The [weather service](../src/services/weather_service.py) is the one that intera
     IconService ->> IconService: Turn into Tkinter compatible image
 ```
 
-The [icon service]((../src/services/icon_service.py)) retrieves weather icons from OpenWeather API. The class's only method uses the icon id (passed as an argument) to get icon data. Using Pillow module, the raw data is converted to ImageTk PhotoImage object and returned.
+The [icon service](../src/services/icon_service.py) retrieves weather icons from OpenWeather API. The class's only method uses the icon id (passed as an argument) to get icon data. Using Pillow module, the raw data is converted to ImageTk PhotoImage object and returned.
 
 [Back to Top](#architecture-description)
 

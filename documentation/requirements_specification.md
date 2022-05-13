@@ -45,7 +45,7 @@ The app consists of two views. The [LoginView](../src/ui/views/login_view.py) is
 
 ---
 
-## The Functionality Offered in the Early Version
+## The Functionality Offered in the Current Version
 
 - Using location name as a search term, the user can view:
     - [x] Detailed current weather.

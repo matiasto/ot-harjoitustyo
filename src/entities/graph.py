@@ -22,7 +22,7 @@ class Graph:
             data (list): List of "hours". each hour is a dictionary
                         representing weather conditions.
         """
-        
+
         self.__data = None
         self.__parse(data)
 
@@ -32,7 +32,7 @@ class Graph:
 
         return self.__data
 
-    def __sort_data(self):
+    def __sort_data(self) -> None:
         """Uses datetime as primary key."""
 
         self.__data = self.__data.set_index("time")

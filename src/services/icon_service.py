@@ -9,7 +9,7 @@ class IconService:
 
     def __init__(self) -> None:
         """Class constructor."""
-        
+
         self.__base_url = ConfigService().icon_url
 
     def geticon(self, iconcode: str) -> object:

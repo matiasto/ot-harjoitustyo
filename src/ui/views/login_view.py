@@ -46,7 +46,7 @@ class LoginView:
 
         self.__frame.destroy()
 
-    def __show_error_message(self):
+    def __show_error_message(self) -> None:
         """Error message for invalid API key."""
 
         messagebox.showerror("Error", "Invalid API Key")

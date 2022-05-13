@@ -112,7 +112,7 @@ class WeatherView:
         self.__frames["graph"] = GraphFrame(self.__root, self.__data.graph)
         self.__frames["graph"].pack()
 
-    def __show_error_message(self):
+    def __show_error_message(self) -> None:
         """Error message for failed request."""
 
         messagebox.showerror("Error", "Request Failed")

@@ -27,4 +27,5 @@
 | 11.05.2022    | 3    | Continuing architecture description |
 | 11.05.2022    | 2    | Testing document |
 | 11.05.2022    | 3    | Continuing documentation |
-| yht           | 58   | | 
+| 13.05.2022    | 4    | Finishing touches |
+| yht           | 62   | | 
